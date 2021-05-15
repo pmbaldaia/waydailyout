@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Barlow&display=swap');
+@import url('https://fonts.google.com/specimen/Handlee?query=handle');
 
 body {
   font-family: 'Handlee';
@@ -92,4 +92,60 @@ td {
 button {
   background: #5A8DEE;
   color: #FFF;
+}
+
+.btnCreate,
+.container {
+  min-width: 200px;
+  position: absolute;
+  text-align: center;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, 250%);
+  font-size: 2rem;
+
+}
+
+.btnLogin1 {
+  min-width: 200px;
+  text-align: center;
+  position: absolute;
+  top: -15%;
+  left: 50%;
+  background: #FFF;
+  transform: translate(-50%, 400%);
+  color: black;
+  border-radius: 40%;
+}
+
+.btnCreate {
+  background: #FFF;
+  color: black;
+  border-radius: 40%;
+}
+
+.logo {
+  width: 50%;
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -100%);
+
+}
+
+.fundo {
+  background: #D4E1E8;
+}
+
+.circle {
+  background: #FDC634;
+  width: 1000px;
+  height: 360px;
+  border-radius: 100% 100% 100% 100%;
+  border-bottom-color: transparent;
+  border-left-color: transparent;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  overflow: hidden;
 }

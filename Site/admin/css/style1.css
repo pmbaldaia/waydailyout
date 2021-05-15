@@ -1,0 +1,133 @@
+@import url('https://fonts.google.com/specimen/Handlee?query=handle');
+@import url('https://fonts.google.com/specimen/Rubik?query=rubik');
+
+body {
+    background: #D5E2E8;
+    font-family: 'Handlee', sans-serif;
+}
+
+.login-box {
+    margin-top: 75px;
+    height: auto;
+    background: #FDC634;
+    text-align: center;
+    box-shadow: 0 3px 6px #FDC634, 0 3px 6px #FDC634;
+}
+
+.login-title {
+    margin-top: 0px;
+    text-align: center;
+    font-weight: bold;
+    color: #203C8A;
+    font-family: 'Handlee';
+    font-size: 70px;
+    margin-top: 5%;
+}
+
+.login-form {
+    margin-top: 30px;
+    text-align: left;
+}
+
+input[type=text] {
+    background-color: #FDC634;
+    border: none;
+    border-bottom: 2px solid #203C8A;
+    border-top: 0px;
+    border-radius: 0px;
+    font-weight: bold;
+    outline: 0;
+    margin-bottom: 0px;
+    padding-left: 0px;
+    color: black;
+}
+
+input[type=password] {
+    background-color: #FDC634;
+    border: none;
+    border-bottom: 2px solid #203C8A;
+    border-top: 0px;
+    border-radius: 0px;
+    font-weight: bold;
+    outline: 0;
+    padding-left: 0px;
+    margin-bottom: 0px;
+    color: black;
+}
+
+.form-group {
+    margin-bottom: 40px;
+    outline: 0px;
+}
+
+.form-control:focus {
+    border-color: inherit;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border-bottom: 2px solid #203C8A;
+    outline: 0;
+    background-color: #203C8A;
+    color: #ECF0F5;
+}
+
+input:focus {
+    outline: none;
+    box-shadow: 0 0 0;
+}
+
+label {
+    margin-bottom: 0px;
+}
+
+.form-control-label {
+    font-size: 10px;
+    color: #203C8A;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.btn-outline-primary {
+    border-color: #203C8A;
+    color: #203C8A;
+    border-radius: 0px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    box-shadow: 0 1px 3px;
+}
+
+.btn-outline-primary:hover {
+    background-color: #203C8A;
+    right: 0px;
+}
+
+.login-btm {
+    float: center;
+    width: 100px;
+}
+
+.login-button {
+    padding-right: 0px;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.login-text {
+    text-align: center;
+    padding-left: 0px;
+    color: black;
+}
+
+.loginbttm {
+    padding: 0px;
+}
+
+.logo {
+    margin-top: 50px;
+    align-self: center;
+    width: 50%;
+}
+
+::placeholder {
+    font-size: 12px;
+    font-family: 'Rubik';
+}

@@ -1,11 +1,15 @@
 @import url('https://fonts.google.com/specimen/Handlee?query=handle');
 @import url('https://fonts.google.com/specimen/Rubik?query=rubik');
 
-body {
+body{
     background: #D5E2E8;
     font-family: 'Handlee', sans-serif;
 }
 
+.col-lg-6{
+    padding: 30px;
+    padding-bottom: 0px;
+}
 .login-box {
     margin-top: 75px;
     height: auto;
@@ -15,7 +19,7 @@ body {
 }
 
 .login-title {
-    margin-top: 0px;
+    margin-top: 60px;
     text-align: center;
     font-weight: bold;
     color: #203C8A;
@@ -25,16 +29,51 @@ body {
 }
 
 .login-form {
-    margin-top: 30px;
+    margin-top: 20px;
     text-align: left;
 }
 
-input[type=text] {
+
+input[type=text]{
     background-color: #FDC634;
     border: none;
-    border-bottom: 2px solid #203C8A;
     border-top: 0px;
-    border-radius: 0px;
+    border-radius: 48px;
+    font-weight: bold;
+    outline: 0;
+    margin-bottom: 0px;
+    padding-left: 0px;
+    color: black;
+}
+select{
+    background-color: #FDC634;
+    border: none;
+    border-top: 0px;
+    border-radius: 48px;
+    font-weight: bold;
+    outline: 0;
+    margin-bottom: 0px;
+    padding-left: 0px;
+    color: black;
+}
+
+input[type=email]{
+    background-color: #FDC634;
+    border: none;
+    border-top: 0px;
+    border-radius: 48px;
+    font-weight: bold;
+    outline: 0;
+    margin-bottom: 0px;
+    padding-left: 0px;
+    color: black;
+}
+
+input[type=date]{
+    background-color: #FDC634;
+    border: none;
+    border-top: 0px;
+    border-radius: 48px;
     font-weight: bold;
     outline: 0;
     margin-bottom: 0px;
@@ -45,18 +84,17 @@ input[type=text] {
 input[type=password] {
     background-color: #FDC634;
     border: none;
-    border-bottom: 2px solid #203C8A;
     border-top: 0px;
-    border-radius: 0px;
+    border-radius: 48px;
     font-weight: bold;
     outline: 0;
     padding-left: 0px;
     margin-bottom: 0px;
-    color: black;
 }
 
 .form-group {
-    margin-bottom: 40px;
+    justify-content: center;
+    margin-bottom: 20px;
     outline: 0px;
 }
 
@@ -70,6 +108,15 @@ input[type=password] {
     color: #ECF0F5;
 }
 
+.form-select:focus{
+    border-color: inherit;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border-bottom: 2px solid #203C8A;
+    outline: 0;
+    background-color: #203C8A;
+    color: #ECF0F5;
+}
 input:focus {
     outline: none;
     box-shadow: 0 0 0;
@@ -80,23 +127,26 @@ label {
 }
 
 .form-control-label {
-    font-size: 10px;
+    font-size: 20px;
     color: #203C8A;
     font-weight: bold;
     letter-spacing: 1px;
 }
 
 .btn-outline-primary {
-    border-color: #203C8A;
-    color: #203C8A;
-    border-radius: 0px;
+    /* border-color: #203C8A; */
+    color: #ffffff;
+    background-color: #203C8A;
+    border-radius: 48px;
     font-weight: bold;
+    font-size: 20px;
     letter-spacing: 1px;
     box-shadow: 0 1px 3px;
 }
 
 .btn-outline-primary:hover {
-    background-color: #203C8A;
+    background-color: #D5E2E8;
+    color:black;
     right: 0px;
 }
 
@@ -109,6 +159,8 @@ label {
     padding-right: 0px;
     text-align: center;
     margin-bottom: 25px;
+    margin-top: 90px;
+    margin-left: 120px;
 }
 
 .login-text {
@@ -119,6 +171,7 @@ label {
 
 .loginbttm {
     padding: 0px;
+    width: 70px;
 }
 
 .logo {

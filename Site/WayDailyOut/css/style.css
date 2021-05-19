@@ -2,11 +2,16 @@
 
 body {
   font-family: 'Handlee';
-
+  overflow: hidden;
 }
 
 a:hover {
   text-decoration: none;
+
+}
+
+a {
+  color: black;
 }
 
 .border-left {
@@ -144,6 +149,8 @@ button {
   background: #FDC634;
   width: 1000px;
   height: 700px;
+  position: relative;
+  box-shadow: 0 0 100px 15px #FDC634;
   border-radius: 100% 100% 100% 100%;
   border-bottom-color: transparent;
   border-left-color: transparent;

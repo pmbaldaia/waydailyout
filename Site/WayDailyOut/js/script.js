@@ -45,3 +45,10 @@ var loader;
         loader = document.getElementById('loading');
         loadNow(2);
     });
+
+    onScroll = function (e){
+        var maxScroll=1200
+        if(e.target.scrollLeft>maxScrollLeft){
+          e.target.scrollLeft=maxScrollLeft 
+        }
+     }

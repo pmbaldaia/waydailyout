@@ -6,12 +6,12 @@ export default class UserController {
         this.users = localStorage.users ? JSON.parse(localStorage.users) : []
     }
 
-    register(username, password) {
+    register(username, gender, email, date, local, password) {
         if (this.users.find(user => user.username === username)) {
             throw Error(`User with username "${username}" already exists!`);
         } else {
             const newId = this.users.length > 0 ? this.users[this.users.length - 1].id + 1 : 1
-            this.users.push(new UserModel(newId, username, password));
+            this.users.push(new UserModel(newId, username, gender, email, date, local, password));
             localStorage.setItem('users', JSON.stringify(this.users));
         }
     }
@@ -25,9 +25,9 @@ export default class UserController {
         }
     }
 
-    logout() {
-        sessionStorage.removeItem('loggedUser');
-    }
+    // logout() {
+    //     sessionStorage.removeItem('loggedUser');
+    // }
 
     isLogged() {
         return sessionStorage.getItem('loggedUser') !== null ? true : false;

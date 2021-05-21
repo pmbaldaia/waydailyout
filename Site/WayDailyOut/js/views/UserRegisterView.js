@@ -15,12 +15,6 @@ export default class UserView {
         this.registerButton = document.getElementById('btnRegister')
         this.bindRegisterForm();
 
-        // login DOM
-        this.loginUsername = document.getElementById('txtUsername');
-        this.loginPassword = document.getElementById('txtPassword');
-        this.loginButton = document.getElementById('btnLogin');
-        this.bindLoginForm();
-
         this.messages = document.querySelector('#messages')
     }
 
@@ -34,25 +28,6 @@ export default class UserView {
                 this.userController.register(this.registerUsername.value, this.registerGender.value, this.registerEmail.value,
                     this.registerDate.value, this.registerLocal.value, this.registerPassword.value);
                 this.displayMessage('User registered with success!', 'success');
-            } catch (e) {
-                this.displayMessage(e, 'danger');
-            }
-        });
-    }
-
-    bindLoginForm() {
-        this.loginButton.addEventListener('click', () => {
-            try {
-                this.userController.login(this.loginUsername.value, this.loginPassword.value);
-                this.displayMessage('User logged in with success!', 'success');
-
-                // Wait 1 second before reloading, so the user can see the login success message
-                setTimeout(() => {
-                    this.updateButtons('login');
-                    location.reload()
-                },
-                    1000);
-
             } catch (e) {
                 this.displayMessage(e, 'danger');
             }

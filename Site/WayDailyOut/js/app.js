@@ -4,8 +4,8 @@ class App {
     constructor() {
         this.routes = {
             '': [UserView],
-            'register': [UserView],
-            'login': [UserView]
+            'register': [UserRegisterView],
+            'login': [UserLoginView]
         };
 
         // import dummy data for testing purposes

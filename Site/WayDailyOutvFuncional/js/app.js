@@ -52,7 +52,7 @@ class App {
                 id: 1,
                 name: 'Aprender',
                 categories: 'Música',
-                photo: 'http://www.planckmachine.com/wp-content/uploads/2016/09/hysteria-muse-meaning-song.jpg',
+                photo: '',
                 description: 'The best band ever',
             },
             {

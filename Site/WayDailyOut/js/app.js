@@ -4,7 +4,8 @@ class App {
     constructor() {
         this.routes = {
             '': [UserView],
-            'index': [UserView]
+            'register': [UserRegisterView],
+            'login': [UserLoginView]
         };
 
         // import dummy data for testing purposes
@@ -19,11 +20,19 @@ class App {
             {
                 id: 1,
                 username: 'user1',
+                gender: 'female',
+                email: '123@esmad.com',
+                date: '12-03-1999',
+                local: 'Porto',
                 password: 'pass1'
             },
             {
                 id: 2,
                 username: 'user2',
+                gender: 'male',
+                email: '456@esmad.com',
+                date: '10-11-2000',
+                local: 'Lisboa',
                 password: 'pass2'
             }
         ];

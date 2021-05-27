@@ -8,7 +8,7 @@ export default class UserController {
 
     register(username, password) {
         if (this.users.find(user => user.username === username)) {
-            throw Error(`User with username "${username}" already exists!`);
+            throw Error(`Utilizador "${username}" já existe!`);
         } else {
             const newId = this.users.length > 0 ? this.users[this.users.length - 1].id + 1 : 1
             this.users.push(new UserModel(newId, username, password));

@@ -27,10 +27,10 @@ export default class UserView {
 
             try {
                 if (this.registerPassword.value !== this.registerPassword2.value) {
-                    throw Error('Password and Confirm Password are not equal');
+                    throw Error('Password e o Confirmar Password não são iguais ');
                 }
                 this.userController.register(this.registerUsername.value, this.registerPassword.value);
-                this.displayMessage('User registered with success!', 'success');
+                this.displayMessage('Utilizador registado com sucesso!', 'success');
             } catch (e) {
                 this.displayMessage(e, 'danger');
             }
@@ -41,7 +41,7 @@ export default class UserView {
         this.loginButton.addEventListener('click', () => {
             try {
                 this.userController.login(this.loginUsername.value, this.loginPassword.value);
-                this.displayMessage('User logged in with success!', 'success');
+                this.displayMessage('Iniciou sessão!', 'success');
 
                 // Wait 1 second before reloading, so the user can see the login success message
                 setTimeout(() => {

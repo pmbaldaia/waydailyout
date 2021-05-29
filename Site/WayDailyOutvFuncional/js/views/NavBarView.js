@@ -29,6 +29,8 @@ export default class UserView {
 
         // Atualiza botões tendo em conta se o user está autenticado ou não
         this.updateStatusUI();
+        //Verifica se quem está autenticado é um admin ou não
+        this.adminLogged();
     }
 
     /**
@@ -39,13 +41,14 @@ export default class UserView {
             event.preventDefault();
             try {
                 if (this.registerPassword.value !== this.registerPassword2.value) {
-                    throw Error('Password e Repetir Password não são iguais');
+                    throw Error('Password incorreta');
+                } else {
+                    this.userController.register(this.registerUsername.value, this.registerPassword.value, 'user');
+                    this.displayMessage('register', 'Utilizador registado com sucesso!', 'success');
+                    // Espera 1 seg. antes de fazer refresh à pagina
+                    // Assim o utilizador pode ver a mensagem na modal antes de a mesma se fechar
+                    setTimeout(() => { location.reload() }, 1000);
                 }
-                this.userController.register(this.registerUsername.value, this.registerPassword.value);
-                this.displayMessage('register', 'Utilizador registado com sucesso!', 'success');
-                // Espera 1 seg. antes de fazer refresh à pagina
-                // Assim o utilizador pode ver a mensagem na modal antes de a mesma se fechar
-                setTimeout(() => { location.reload() }, 1000);
             } catch (err) {
                 this.displayMessage('register', err, 'danger');
             }
@@ -94,6 +97,10 @@ export default class UserView {
             this.registerButton.style.visibility = 'visible'
             this.logoutButton.style.visibility = 'hidden'
         }
+    }
+
+    adminLogged() {
+        this.usercontroller.isAdmin();
     }
 
     /**

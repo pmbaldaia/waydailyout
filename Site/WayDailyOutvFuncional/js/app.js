@@ -82,12 +82,26 @@ class App {
             {
                 id: 1,
                 username: 'user1',
-                password: 'pass1'
+                password: 'pass1',
+                type: 'user'
             },
             {
                 id: 2,
-                username: 'user2',
-                password: 'pass2'
+                username: 'pedro',
+                password: 'pedro',
+                type: 'admin'
+            },
+            {
+                id: 3,
+                username: 'leonor',
+                password: 'leonor',
+                type: 'admin'
+            },
+            {
+                id: 4,
+                username: 'sofia',
+                password: 'sofia',
+                type: 'admin'
             }
 
         ];

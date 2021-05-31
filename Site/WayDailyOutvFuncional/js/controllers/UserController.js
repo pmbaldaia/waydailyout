@@ -7,7 +7,7 @@ export default class UserController {
 
     register(username, password, type) {
         if (!this.users.some(user => user.username === username)) {
-            this.users.push(new UserModel(username, password, type));
+            this.users.push(new UserModel(username, birthDate, local, password, type));
             localStorage.setItem('users', JSON.stringify(this.users))
         } else {
             throw Error(`Utilizador  "${username}" já existe!`);

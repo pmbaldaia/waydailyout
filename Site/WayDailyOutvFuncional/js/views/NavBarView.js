@@ -15,6 +15,10 @@ export default class UserView {
         // Gestão do form de registo
         this.frmRegister = document.querySelector('#frmRegister');
         this.registerUsername = document.querySelector('#txtUsernameRegister');
+        // this.registerGender = document.querySelector('#sltGenderRegister');
+        // this.registerEmail = document.querySelector('#txtEmailRegister');
+        this.registerBirthDate = document.querySelector('#txtDateRegister');
+        this.registerLocal = document.querySelector('#txtLocalRegister');
         this.registerPassword = document.querySelector('#txtPasswordRegister');
         this.registerPassword2 = document.querySelector('#txtPasswordRegister2');
         this.registerMessage = document.querySelector('#registerMessage')
@@ -29,8 +33,8 @@ export default class UserView {
 
         // Atualiza botões tendo em conta se o user está autenticado ou não
         this.updateStatusUI();
-        //Verifica se quem está autenticado é um admin ou não
-        this.adminLogged();
+        // //Verifica se quem está autenticado é um admin ou não
+        // this.adminLogged();
     }
 
     /**
@@ -43,7 +47,8 @@ export default class UserView {
                 if (this.registerPassword.value !== this.registerPassword2.value) {
                     throw Error('Password incorreta');
                 } else {
-                    this.userController.register(this.registerUsername.value, this.registerPassword.value, 'user');
+                    this.userController.register(this.registerUsername.value,
+                        this.registerBirthDate.value, this.registerLocal.value, this.registerPassword.value, 'user');
                     this.displayMessage('register', 'Utilizador registado com sucesso!', 'success');
                     // Espera 1 seg. antes de fazer refresh à pagina
                     // Assim o utilizador pode ver a mensagem na modal antes de a mesma se fechar
@@ -99,9 +104,9 @@ export default class UserView {
         }
     }
 
-    adminLogged() {
-        this.usercontroller.isAdmin();
-    }
+    // adminLogged() {
+    //     this.usercontroller.isAdmin();
+    // }
 
     /**
      * Função que define e exibe uma mensagem de sucesso ou de erro

@@ -82,6 +82,8 @@ class App {
             {
                 id: 1,
                 username: 'user1',
+                // gender: 'male',
+                // email: 'user1@123.pt',
                 password: 'pass1',
                 type: 'user'
             },

@@ -30,8 +30,8 @@ export default class UserController {
         return sessionStorage.getItem('loggedUser') ? true : false
     }
 
-    isAdmin(){
+    isAdmin() {
         const name = sessionStorage.getItem('loggedUser')
-        return this.users.some(user=>user.username == name && user.type=='admin')
+        return this.users.some(user => user.username == name && user.type == 'admin')
     }
 }

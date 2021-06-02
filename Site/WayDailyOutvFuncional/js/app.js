@@ -84,6 +84,7 @@ class App {
                 username: 'user1',
                 // gender: 'male',
                 // email: 'user1@123.pt',
+                local: 'Porto',
                 password: 'pass1',
                 type: 'user'
             },

@@ -17,7 +17,7 @@ export default class UserView {
         this.registerUsername = document.querySelector('#txtUsernameRegister');
         // this.registerGender = document.querySelector('#sltGenderRegister');
         // this.registerEmail = document.querySelector('#txtEmailRegister');
-        this.registerBirthDate = document.querySelector('#txtDateRegister');
+        // this.registerBirthDate = document.querySelector('#txtDateRegister');
         this.registerLocal = document.querySelector('#txtLocalRegister');
         this.registerPassword = document.querySelector('#txtPasswordRegister');
         this.registerPassword2 = document.querySelector('#txtPasswordRegister2');
@@ -47,8 +47,7 @@ export default class UserView {
                 if (this.registerPassword.value !== this.registerPassword2.value) {
                     throw Error('Password incorreta');
                 } else {
-                    this.userController.register(this.registerUsername.value,
-                        this.registerBirthDate.value, this.registerLocal.value, this.registerPassword.value, 'user');
+                    this.userController.register(this.registerUsername.value, this.registerLocal.value, this.registerPassword.value, 'user');
                     this.displayMessage('register', 'Utilizador registado com sucesso!', 'success');
                     // Espera 1 seg. antes de fazer refresh à pagina
                     // Assim o utilizador pode ver a mensagem na modal antes de a mesma se fechar

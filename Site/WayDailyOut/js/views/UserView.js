@@ -6,6 +6,10 @@ export default class UserView {
 
         // register DOM
         this.registerUsername = document.getElementById('txtRegisterUsername');
+        this.registerGender = document.getElementById('txtRegisterGender');
+        this.registerEmail = document.getElementById('txtRegisterEmail');
+        this.registerBirthDate = document.getElementById('txtRegisterDateBirth');
+        this.registerLocal = document.getElementById('txtRegisterLocal');
         this.registerPassword = document.getElementById('txtRegisterPassword');
         this.registerPassword2 = document.getElementById('txtConfirmRegisterPassword');
         this.registerButton = document.getElementById('btnRegister');
@@ -20,6 +24,8 @@ export default class UserView {
 
         this.messages = document.querySelector('#messages')
         this.checkLoginStatus();
+
+        this.adminLogged();
     }
 
     bindRegisterForm() {
@@ -29,7 +35,8 @@ export default class UserView {
                 if (this.registerPassword.value !== this.registerPassword2.value) {
                     throw Error('Password e o Confirmar Password não são iguais ');
                 }
-                this.userController.register(this.registerUsername.value, this.registerPassword.value);
+                this.userController.register(this.registerUsername.value, this.registerGender.value, this.registerEmail.value, this.registerBirthDate.value,
+                    this.registerLocal.value, this.registerPassword.value, 'user');
                 this.displayMessage('Utilizador registado com sucesso!', 'success');
             } catch (e) {
                 this.displayMessage(e, 'danger');
@@ -70,6 +77,17 @@ export default class UserView {
         } else {
             this.updateButtons('logout');
         }
+    }
+
+    adminLogged() {
+        this.userController.isAdmin();
+        this.bindAdmin()
+    }
+
+    bindAdmin() {
+        this.loginButton.addEventListener('click', () => {
+            location.href = 'html/admin.html'
+        })
     }
 
     displayMessage(message, type) {

@@ -19,12 +19,30 @@ class App {
             {
                 id: 1,
                 username: 'user1',
-                password: 'pass1'
+                gender: 'male',
+                email: '1234@mail.com',
+                birthDate: '1998-03-15',
+                local: 'Lisboa',
+                password: 'pass1',
+                type: 'user'
             },
             {
                 id: 2,
-                username: 'user2',
-                password: 'pass2'
+                username: 'pedro',
+                password: 'pedro',
+                user: 'admin'
+            },
+            {
+                id: 3,
+                username: 'leonor',
+                password: 'leonor',
+                type: 'admin'
+            },
+            {
+                id: 4,
+                username: 'sofia',
+                password: 'sofia',
+                type: 'admin'
             }
         ];
 

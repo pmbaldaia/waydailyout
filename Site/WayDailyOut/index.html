@@ -97,84 +97,92 @@
 
                         </div>
                         <div class="tab-pane fade" id="panel8" role="tabpanel">
+                            <form id="frmRegister" required>
+                                <div class="modal-body">
+                                    <div class="md-form form-sm mb-5">
+                                        <i class="fas fa-user-tie prefix"></i>
+                                        <label data-error="wrong" data-success="right"
+                                            for="modalLRInput12">Utilizador</label>
+                                        <input id="txtRegisterUsername" type="text" id="modalLRInput12"
+                                            class="form-control form-control-sm validate"
+                                            placeholder="Introduza o nome do utilizador" required>
+                                    </div>
 
-                            <div class="modal-body">
-                                <div class="md-form form-sm mb-5">
-                                    <i class="fas fa-user-tie prefix"></i>
-                                    <label data-error="wrong" data-success="right"
-                                        for="modalLRInput12">Utilizador</label>
-                                    <input id="txtRegisterUsername" type="text" id="modalLRInput12"
-                                        class="form-control form-control-sm validate"
-                                        placeholder="Introduza o nome do utilizador" required>
+                                    <div class="md-form form-sm mb-5">
+                                        <i class="fas fa-user-tie prefix"></i>
+                                        <label data-error="wrong" data-success="right"
+                                            for="modalLRInput13">Género</label>
+                                        <input id="txtRegisterGender" type="radio" id="modalLRInput13"
+                                            class="form-control form-control-sm validate"
+                                            placeholder="Introduza o nome do utilizador" value="Femenine"
+                                            checked>Feminino
+                                        <input id="txtRegisterGender" type="radio" id="modalLRInput13"
+                                            class="form-control form-control-sm validate"
+                                            placeholder="Introduza o nome do utilizador" value="Male">Masculino
+                                    </div>
+
+                                    <div class="md-form form-sm mb-5">
+                                        <i class="fas fa-user-tie prefix"></i>
+                                        <label data-error="wrong" data-success="right"
+                                            for="modalLRInput14">Email</label>
+                                        <input id="txtRegisterEmail" type="email" id="modalLRInput14"
+                                            class="form-control form-control-sm validate"
+                                            placeholder="Introduza o nome do utilizador" required>
+                                    </div>
+
+                                    <div class="md-form form-sm mb-5">
+                                        <i class="fas fa-user-tie prefix"></i>
+                                        <label data-error="wrong" data-success="right" for="modalLRInput15">Data de
+                                            nascimento</label>
+                                        <input id="txtRegisterDateBirth" type="date" id="modalLRInput15"
+                                            class="form-control form-control-sm validate" place
+                                            holder="Introduza o nome do utilizador" required>
+                                    </div>
+
+                                    <div class="md-form form-sm mb-5">
+                                        <i class="fas fa-user-tie prefix"></i>
+                                        <label data-error="wrong" data-success="right"
+                                            for="modalLRInput16">Local</label>
+                                        <input id="txtRegisterLocal" type="text" id="modalLRInput16"
+                                            class="form-control form-control-sm validate"
+                                            placeholder="Introduza o nome do utilizador" required>
+                                    </div>
+
+                                    <div class="md-form form-sm mb-5">
+                                        <i class="fas fa-lock prefix"></i>
+                                        <label data-error="wrong" data-success="right"
+                                            for="modalLRInput17">Password</label>
+                                        <input id="txtRegisterPassword" type="password" id="modalLRInput17"
+                                            class="form-control form-control-sm validate"
+                                            placeholder="Introduza a sua password" required>
+                                    </div>
+
+                                    <div class="md-form form-sm mb-4">
+                                        <i class="fas fa-lock prefix"></i>
+                                        <label data-error="wrong" data-success="right" for="modalLRInput18">Repetir
+                                            password</label>
+                                        <input id="txtConfirmRegisterPassword" type="password" id="modalLRInput18"
+                                            class="form-control form-control-sm validate"
+                                            placeholder="Repita a sua password" required>
+                                    </div>
+
+                                    <div class="text-center form-sm mt-2">
+                                        <button id="btnRegister" class="btn btn-info">Registar</button>
+                                    </div>
+
                                 </div>
-
-                                <div class="md-form form-sm mb-5">
-                                    <i class="fas fa-user-tie prefix"></i>
-                                    <label data-error="wrong" data-success="right" for="modalLRInput13">Género</label>
-                                    <input id="txtRegisterGender" type="radio" id="modalLRInput13"
-                                        class="form-control form-control-sm validate"
-                                        placeholder="Introduza o nome do utilizador" value="Femenine" checked>Feminino
-                                    <input id="txtRegisterGender" type="radio" id="modalLRInput13"
-                                        class="form-control form-control-sm validate"
-                                        placeholder="Introduza o nome do utilizador" value="Male">Masculino
+                                <div class="modal-footer">
+                                    <div class="options text-right">
+                                        <p class="pt-1">Já tem conta? <a href="#" class="blue-text">Iniciar Sessão<img
+                                                    src="./img/Icons/up.png"></a></p>
+                                    </div>
+                                    <button type="button" class="btn btn-outline-info waves-effect ml-auto"
+                                        data-dismiss="modal">Fechar</button>
                                 </div>
+                            </form>
 
-                                <div class="md-form form-sm mb-5">
-                                    <i class="fas fa-user-tie prefix"></i>
-                                    <label data-error="wrong" data-success="right" for="modalLRInput14">Email</label>
-                                    <input id="txtRegisterEmail" type="email" id="modalLRInput14"
-                                        class="form-control form-control-sm validate"
-                                        placeholder="Introduza o nome do utilizador" required>
-                                </div>
 
-                                <div class="md-form form-sm mb-5">
-                                    <i class="fas fa-user-tie prefix"></i>
-                                    <label data-error="wrong" data-success="right" for="modalLRInput15">Data de
-                                        nascimento</label>
-                                    <input id="txtRegisterDateBirth" type="date" id="modalLRInput15"
-                                        class="form-control form-control-sm validate" place
-                                        holder="Introduza o nome do utilizador" required>
-                                </div>
 
-                                <div class="md-form form-sm mb-5">
-                                    <i class="fas fa-user-tie prefix"></i>
-                                    <label data-error="wrong" data-success="right" for="modalLRInput16">Local</label>
-                                    <input id="txtRegisterLocal" type="text" id="modalLRInput16"
-                                        class="form-control form-control-sm validate"
-                                        placeholder="Introduza o nome do utilizador" required>
-                                </div>
-
-                                <div class="md-form form-sm mb-5">
-                                    <i class="fas fa-lock prefix"></i>
-                                    <label data-error="wrong" data-success="right" for="modalLRInput17">Password</label>
-                                    <input id="txtRegisterPassword" type="password" id="modalLRInput17"
-                                        class="form-control form-control-sm validate"
-                                        placeholder="Introduza a sua password" required>
-                                </div>
-
-                                <div class="md-form form-sm mb-4">
-                                    <i class="fas fa-lock prefix"></i>
-                                    <label data-error="wrong" data-success="right" for="modalLRInput18">Repetir
-                                        password</label>
-                                    <input id="txtConfirmRegisterPassword" type="password" id="modalLRInput18"
-                                        class="form-control form-control-sm validate"
-                                        placeholder="Repita a sua password" required>
-                                </div>
-
-                                <div class="text-center form-sm mt-2">
-                                    <button id="btnRegister" class="btn btn-info">Registar</button>
-                                </div>
-
-                            </div>
-
-                            <div class="modal-footer">
-                                <div class="options text-right">
-                                    <p class="pt-1">Já tem conta? <a href="#" class="blue-text">Iniciar Sessão<img
-                                                src="./img/Icons/up.png"></a></p>
-                                </div>
-                                <button type="button" class="btn btn-outline-info waves-effect ml-auto"
-                                    data-dismiss="modal">Fechar</button>
-                            </div>
                         </div>
                     </div>
 

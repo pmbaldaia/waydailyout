@@ -80,15 +80,12 @@ export default class UserView {
     }
 
     adminLogged() {
-        this.userController.isAdmin();
-        this.bindAdmin()
+        if (this.userController.isAdmin()) {
+            location.href = 'html/admin.html'
+        }
+
     }
 
-    bindAdmin() {
-        this.loginButton.addEventListener('click', () => {
-            location.href = 'html/admin.html'
-        })
-    }
 
     displayMessage(message, type) {
         this.messages.innerHTML =

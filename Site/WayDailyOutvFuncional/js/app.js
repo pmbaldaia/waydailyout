@@ -48,46 +48,53 @@ class App {
 
     #importDataFixtures() {
         const activities = [
+            
             {
                 id: 1,
-                name: 'Aprender',
-                categories: 'Música',
-                photo: '',
-                description: 'The best band ever',
+                name: 'Artes e Ofícios',
+                //categories
+                categories: 'art',
+                photo: './img/imagens/5218.png',
+                description: 'Aqui podes aprender artes',
             },
             {
                 id: 2,
-                name: 'RadioHead',
-                categories: 'Família',
-                photo: 'https://ep01.epimg.net/elpais/imagenes/2017/05/17/icon/1495017818_647155_1495125183_noticia_normal.jpg',
-                description: 'The best band ever',
+                name: 'Música',
+                //categories
+                categories: 'music',
+                photo: './img/imagens/6954.png"',
+                description: 'Irás ter aulas de música',
             },
             {
                 id: 3,
-                name: 'James',
-                categories: 'Aprender',
-                photo: 'http://ksassets.timeincuk.net/wp/uploads/sites/55/2013/01/2012JamesBandPress181212-2.jpg',
-                description: 'The best band ever',
+                name: 'Comida',
+                //categories
+                categories: 'food',
+                photo: './img/imagens/252.png',
+                description: 'Podes aprender a cozinhar',
             },
             {
                 id: 4,
-                name: 'Metallica',
-                categories: 'Música',
-                photo: 'https://images.impresa.pt/blitz/2016-08-19-metallica.jpg/original/mw-860',
-                description: 'The best band ever',
+                name: 'Aprender',
+                //categories
+                categories: 'learn',
+                photo: './img/imagens/5514.png',
+                description: 'Aprender a aprender',
             }
         ];
 
         const users = [
             {
                 id: 1,
-                username: 'user1',
-                password: 'pass1'
+                username: 'user',
+                password: 'user',
+                type: 'user'
             },
             {
                 id: 2,
-                username: 'user2',
-                password: 'pass2'
+                username: 'admin',
+                password: 'admin',
+                type: 'admin'
             }
 
         ];

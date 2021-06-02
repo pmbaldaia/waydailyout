@@ -1,15 +1,15 @@
-import ActivityController from '../controllers/ActivityController.js'
+import CategoryController from '../controllers/CategoryController.js'
 import UserController from '../controllers/UserController.js'
 
-export default class ActivityView {
+export default class CategoriesView {
 
     constructor() {
-        this.activityController = new ActivityController()
+        this.categoryController = new CategoryController()
         this.userController = new UserController()
 
         // Catálogo: filtro
-        this.txtActivity = document.querySelector("#txtActivity")
-        this.categories = document.querySelector("#categories")
+        this.txtCategory = document.querySelector("#txtCategory")
+        this.catalogcategories = document.querySelector("#catalogcategories")
         this.btnFilter = document.querySelector("#btnFilter")
         this.bindFilter()
 
@@ -17,64 +17,52 @@ export default class ActivityView {
         this.btnSort = document.querySelector("#btnSort")
         this.bindSort() 
 
-        // Catálogo: adição de atividade
+        // Catálogo: adição de categorias
         this.btnAdd = document.querySelector("#btnAdd")
         this.bindAdd()
 
-        // Catálogo: listagem de atividades
-        this.catalog = document.querySelector("#catalog")
-        this.renderCatalog(this.activityController.getActivities())
-    }
-
-    bindFilter() {
-        this.btnFilter.addEventListener('click', () => {
-            this.renderCatalog(this.activityController.getActivities(this.txtActivity.value, this.categories.value))
-        })
-    }
-
-    bindSort() {
-        this.btnSort.addEventListener('click', () => {
-            this.renderCatalog(this.activityController.getActivities(this.txtActivity.value, this.categories.value, true))
-        })
+        // Catálogo: listagem de categorias
+        this.catalogs = document.querySelector("#catalogs")
+        this.renderCatalog(this.activityController.getCategories())
     }
 
     bindAdd() {
         this.btnAdd.addEventListener('click', () => {
-            location.href = 'html/newActivity.html';
+            location.href = 'html/Category.html';
         })
     }
 
-    renderCatalog(activities = []) {
+    renderCatalog(categories = []) {
         // Gerir a visualização do botão Add
-        this.userController.isLogged() ?
-            this.btnAdd.style.visibility = 'hidden' :
+        this.userController.isAdmin() ?
+            this.btnAdd.style.visibility = 'visible' :
             this.btnAdd.style.visibility = 'hidden';
 
         // Gerir o catálogo
         let result = '<div class="row row-cols-3">'
-        for (const activity of activities) {
-            result += this.generateActivityCard(activity)
+        for (const category of categories) {
+            result += this.generateCategoryCard(category)
         }
         result += '</div>'
-        this.catalog.innerHTML = result
+        this.catalogcategories.innerHTML = result
 
         // Gerir botões Add e See more
         this.bindAddRemoveEvent()
         this.bindAddSeeMoreEvent()
     }
 
-    generateActivityCard(activity) {
+    generateCategoryCard(category) {
         let html = `
         <div class="col-3" >
             <div class="card" style="background-color:#D4E1E8">
-                <img class="card-img-top" src="${activity.photo}" alt="">
+                <img class="card-img-top" src="${category.photo}" alt="">
                 <div class="card-body">
-                    <h4 class="card-title">${activity.name}</h4>
-                    <p class="card-text">${activity.categories}</p>
-                    <button id="${activity.name}" class="btn btn-primary see">Ver Mais</button>
+                    <h4 class="card-title">${category.name}</h4>
+                    <p class="card-text">${category.model}</p>
+                    <button id="${category.name}" class="btn btn-primary see">Ver Mais</button>
             `
         if (this.userController.isAdmin()) {
-            html += `<button id="${activity.name}" class="btn btn-danger remove">Remover</button>`
+            html += `<button id="${category.name}" class="btn btn-danger remove">Remover</button>`
         }
 
         html += `

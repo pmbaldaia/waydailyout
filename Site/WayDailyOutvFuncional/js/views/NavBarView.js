@@ -23,6 +23,7 @@ export default class UserView {
         // Gestão dos botões da navbar
         this.loginButton = document.querySelector('#btnLogin');
         this.registerButton = document.querySelector('#btnRegister');
+        this.profileButton = document.querySelector('#btnProfile')
         this.logoutButton = document.querySelector('#btnLogout');
         this.bindLogout();
 
@@ -41,7 +42,7 @@ export default class UserView {
                 if (this.registerPassword.value !== this.registerPassword2.value) {
                     throw Error('Password e Repetir Password não são iguais');
                 }
-                this.userController.register(this.registerUsername.value, this.registerPassword.value);
+                this.userController.register(this.registerUsername.value, this.registerPassword.value, 'user');
                 this.displayMessage('register', 'Utilizador registado com sucesso!', 'success');
                 // Espera 1 seg. antes de fazer refresh à pagina
                 // Assim o utilizador pode ver a mensagem na modal antes de a mesma se fechar
@@ -88,10 +89,12 @@ export default class UserView {
         if (this.userController.isLogged()) {
             this.loginButton.style.visibility = 'hidden'
             this.registerButton.style.visibility = 'hidden'
+            this.profileButton.style.visibility = 'visible'
             this.logoutButton.style.visibility = 'visible'
         } else {
             this.loginButton.style.visibility = 'visible'
             this.registerButton.style.visibility = 'visible'
+            this.profileButton.style.visibility = 'hidden'
             this.logoutButton.style.visibility = 'hidden'
         }
     }

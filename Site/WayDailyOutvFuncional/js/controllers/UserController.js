@@ -10,7 +10,7 @@ export default class UserController {
             this.users.push(new UserModel(username, password, type, email, genre, local));
             localStorage.setItem('users', JSON.stringify(this.users))
         } else {
-            throw Error(`Utilizador  "${username}" já existe!`);
+            throw Error(`user  "${username}" já existe!`);
         }
     }
 
@@ -34,4 +34,69 @@ export default class UserController {
         const name = sessionStorage.getItem('loggedUser')
         return this.users.some(user=>user.username == name && user.type=='admin')
     }
+
+    editar(username = '', password){
+        let user = sessionStorage['loggedUser']
+        let novoPerfil = localStorage['users']
+        novoPerfil = JSON.parse(novoPerfil)
+
+        if (username == '') {
+            username = user
+        }
+
+        for (let i = 0; i < novoPerfil.length; i++){
+            if(novoPerfil[i].username == user){
+                if (username != user){
+                    novoPerfil[i].username = username
+                    sessionStorage.setItem('loggedUser', username)
+                }
+                if (password != ''){
+                    novoPerfil[i].password = password
+                }
+                this.users[i] = novoPerfil[i]
+                localStorage.setItem('users', JSON.stringify(this.users))
+            }
+        }
+    }
+    
+
+    userType(nome){
+        let users = this.allUsers()
+        for (let i = 0; i < users.length; i++){
+            if(users[i].username == nome){
+               let tipo = users[i].type
+
+                if (tipo == 'admin'){
+                    tipo = 'user'
+                }
+                else if (tipo == 'user'){
+                    tipo = 'admin'
+                }
+
+                users[i].type = tipo
+                this.users[i] = users[i]
+                localStorage.setItem('users', JSON.stringify(this.users)) 
+            }
+            
+        }
+    }
+
+    stades(nome){
+        let user = this.allUsers()
+        for (let i = 0; i < user.length; i++){
+            if (user[i].username == nome){
+                const stade = user[i].stade
+                
+                return stade
+            }
+        }
+    }
+
+        allUsers(){
+            let users = localStorage['users']
+            users = JSON.parse(users)
+            return users
+        }
+
 }
+

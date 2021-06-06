@@ -2,6 +2,7 @@ import NavBarView from './views/NavBarView.js'
 import ActivitiesView from './views/ActivitiesView.js'
 import DetailActivityView from './views/DetailActivityView.js'
 import NewActivityView from './views/NewActivityView.js'
+import AdminView from './views/AdminView.js'
 
 class App {
     constructor() {
@@ -9,7 +10,7 @@ class App {
         this.routes = {
             '': [
                 NavBarView,
-                ActivitiesView,
+                ActivitiesView
             ],
             'index': [
                 NavBarView,
@@ -20,6 +21,9 @@ class App {
             ],
             'newActivity': [
                 NewActivityView
+            ],
+            'admin': [
+                AdminView
             ]
         };
 

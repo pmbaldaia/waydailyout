@@ -1,38 +1,39 @@
 import UserModel from '../models/UserModel.js'
 
 export default class UserController {
+
     constructor() {
-        this.users = localStorage.users ? JSON.parse(localStorage.users) : [];
+        this.users = localStorage.users ? JSON.parse(localStorage.users) : []
     }
 
-    register(username, password, type, email, genre, local) {
-        if (!this.users.some(user => user.username === username)) {
-            this.users.push(new UserModel(username, password, type, email, genre, local));
-            localStorage.setItem('users', JSON.stringify(this.users))
+    register(username, password) {
+        if (this.users.find(user => user.username === username)) {
+            throw Error(`User with username "${username}" already exists!`);
         } else {
-            throw Error(`user  "${username}" já existe!`);
+            const newId = this.users.length > 0 ? this.users[this.users.length - 1].id + 1 : 1
+            let pontos = 0
+            let type = 'user'
+            let stade = 'regular'
+            this.users.push(new UserModel(newId, username, password, pontos, type, stade));
+            localStorage.setItem('users', JSON.stringify(this.users));
         }
     }
 
     login(username, password) {
         if (this.users.some(user => user.username === username && user.password === password)) {
-            sessionStorage.setItem('loggedUser', username)
+            sessionStorage.setItem('loggedUser', username);
+            return true;
         } else {
-            throw Error('Erro login!');
+            throw Error('Invalid login!');
         }
     }
 
     logout() {
-        sessionStorage.removeItem('loggedUser')
+        sessionStorage.removeItem('loggedUser');
     }
 
     isLogged() {
-        return sessionStorage.getItem('loggedUser') ? true : false
-    }
-
-    isAdmin(){
-        const name = sessionStorage.getItem('loggedUser')
-        return this.users.some(user=>user.username == name && user.type=='admin')
+        return sessionStorage.getItem('loggedUser') !== null ? true : false;
     }
 
     editar(username = '', password){
@@ -57,14 +58,15 @@ export default class UserController {
                 localStorage.setItem('users', JSON.stringify(this.users))
             }
         }
-    }
-    
+}
 
+
+    // admin.html
     userType(nome){
-        let users = this.allUsers()
-        for (let i = 0; i < users.length; i++){
-            if(users[i].username == nome){
-               let tipo = users[i].type
+        let utilizadores = this.allUtilizadores()
+        for (let i = 0; i < utilizadores.length; i++){
+            if(utilizadores[i].username == nome){
+               let tipo = utilizadores[i].type
 
                 if (tipo == 'admin'){
                     tipo = 'user'
@@ -73,8 +75,8 @@ export default class UserController {
                     tipo = 'admin'
                 }
 
-                users[i].type = tipo
-                this.users[i] = users[i]
+                utilizadores[i].type = tipo
+                this.users[i] = utilizadores[i]
                 localStorage.setItem('users', JSON.stringify(this.users)) 
             }
             
@@ -82,21 +84,19 @@ export default class UserController {
     }
 
     stades(nome){
-        let user = this.allUsers()
-        for (let i = 0; i < user.length; i++){
-            if (user[i].username == nome){
-                const stade = user[i].stade
+        let utilizador = this.allUtilizadores()
+        for (let i = 0; i < utilizador.length; i++){
+            if (utilizador[i].username == nome){
+                const stade = utilizador[i].stade
                 
                 return stade
             }
         }
     }
 
-        allUsers(){
-            let users = localStorage['users']
-            users = JSON.parse(users)
-            return users
-        }
-
+    allUtilizadores(){
+        let utilizadores = localStorage['users']
+        utilizadores = JSON.parse(utilizadores)
+        return utilizadores
+    }
 }
-

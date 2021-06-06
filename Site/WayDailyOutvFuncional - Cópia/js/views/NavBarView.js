@@ -24,6 +24,7 @@ export default class UserView {
         this.bindRegisterForm();
 
         // Gestão dos botões da navbar
+        this.userWelcome = document.querySelector('#btnUserWelcome')
         this.loginButton = document.querySelector('#btnLogin');
         this.registerButton = document.querySelector('#btnRegister');
         this.profileButton = document.querySelector('#btnProfile')
@@ -93,11 +94,13 @@ export default class UserView {
         if (this.userController.isLogged()) {
             this.loginButton.style.visibility = 'hidden'
             this.registerButton.style.visibility = 'hidden'
+            this.userWelcome.style.visibility = 'visible'
             this.profileButton.style.visibility = 'visible'
             this.logoutButton.style.visibility = 'visible'
         } else {
                 this.loginButton.style.visibility = 'visible'
                 this.registerButton.style.visibility = 'visible'
+                this.userWelcome.style.visibility = 'hidden'
                 this.profileButton.style.visibility = 'hidden'
                 this.adminButton.style.visibility = 'hidden'
                 this.logoutButton.style.visibility = 'hidden' 
@@ -105,6 +108,7 @@ export default class UserView {
             this.loginButton.style.visibility = 'hidden'
             this.registerButton.style.visibility = 'hidden'
             this.profileButton.style.visibility = 'hidden'
+            this.userWelcome.style.visibility = 'visible'
             this.logoutButton.style.visibility = 'visible'
             this.adminButton.style.visibility = 'visible'
         }

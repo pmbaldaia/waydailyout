@@ -14,6 +14,17 @@
     <div class="container-fluid">
         <a class="navbar-brand"href="../index.html"><img class="logo" src="../img/Logo.png"></a>
         <form class="d-flex">
+            <button style="background-color: Transparent;
+                background-repeat:no-repeat;
+                border: none;
+                cursor:pointer;
+                overflow: hidden;
+                outline:none;">
+                    <b>Iniciou Sessão com </b><span style="color:red;" id="userWelcome"></span>
+            </button>
+                <script type='text/javascript'>
+                    document.getElementById('userWelcome').innerHTML = sessionStorage.getItem('loggedUser');
+                </script> 
             <button class="btn btn-primary" type="button" onclick="dashboard();">Voltar Página Inicial</button>
 
         </form>

@@ -12,6 +12,12 @@ body {
 
 }
 
+th {
+  color: #203C8A;
+  font-family: Rubik;
+}
+
+
 .logo {
   width: 148px;
   height: 43px;

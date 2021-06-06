@@ -22,6 +22,12 @@ export default class UserController {
         }
     }
 
+    delete() {
+        this.users (this.users.filter(username => username.name != name))
+        localStorage.removeItem('users', JSON.stringify(this.users))
+    }
+   
+
     logout() {
         sessionStorage.removeItem('loggedUser')
     }
@@ -35,7 +41,7 @@ export default class UserController {
         return this.users.some(user=>user.username == name && user.type=='admin')
     }
 
-    editar(username = '', password){
+    edit(username = '', password){
         let user = sessionStorage['loggedUser']
         let novoPerfil = localStorage['users']
         novoPerfil = JSON.parse(novoPerfil)

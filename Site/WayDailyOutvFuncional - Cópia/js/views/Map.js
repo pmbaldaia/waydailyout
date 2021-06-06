@@ -37,6 +37,10 @@
    infoWindow.open(map);
  }
 
- function adminPage(){
+ function userPage(){
   window.location='./html/admin.html';
+}
+
+function dashboard(){
+  window.location='../index.html'
 }

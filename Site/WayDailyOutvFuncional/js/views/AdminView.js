@@ -11,7 +11,7 @@ export default class AdminView{
     renderTable(){
         let utilizadores = this.admin.allUsers()
         let table = document.querySelector('table')
-        let resultado = ''
+        let result = ''
         
         table.innerHTML = `<thead>
                                 <tr>
@@ -26,16 +26,27 @@ export default class AdminView{
         for (let i = 0; i < utilizadores.length; i++){
             let stade = this.admin.stades(utilizadores[i].username)
 
-            resultado += `<td>${utilizadores[i].username}</td>
+            result += `<td>${utilizadores[i].username}</td>
                           <td>${utilizadores[i].password}</td>
                           <td>${utilizadores[i].type}</td>
-                          <td><button id="${utilizadores[i].username}" class="alterar">Alterar tipo</button></td>
-                          <td><button id="${utilizadores[i].username}" class="bloquear">Editar</button></td>
-                          <td><button id="${utilizadores[i].username}" class="banir">Remover</button></td>
+                          <td><button id="${utilizadores[i].username}" class="btn btn-info alterar">Alterar tipo</button></td>
+                          <td><button id="${utilizadores[i].username}" class="btn btn-warning edit">Editar</button></td>
+                          <td><button id="${utilizadores[i].username}" class="btn btn-danger delete">Apagar</button></td>
                         </tr>`
         }
 
-        table.innerHTML += resultado
+        table.innerHTML += result
+        this.bindRemoveEvent()
+    }
+
+
+    bindRemoveEvent() {
+        for (const btnRemove of document.getElementsByClassName("delete")) {
+            btnRemove.addEventListener('click', event => {
+                this.UserController.delete(event.target.id)
+                this.renderTable(this.UserController.getUsers(this.txtUsername.value))
+            })
+        }
     }
 
     changedatabase(){
@@ -47,5 +58,6 @@ export default class AdminView{
             })
         }
     }
+
 
 }

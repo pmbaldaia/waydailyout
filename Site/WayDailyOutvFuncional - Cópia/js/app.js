@@ -95,6 +95,12 @@ class App {
                 username: 'admin',
                 password: 'admin',
                 type: 'admin'
+            },
+            {
+                id: 3,
+                username: 'Pedro',
+                password: 'mic',
+                type: 'admin'
             }
 
         ];
@@ -107,7 +113,5 @@ class App {
         }
     }
 }
-
-
 
 new App();

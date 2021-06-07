@@ -48,3 +48,11 @@ function userPage(){
 function dashboard(){
   window.location='../index.html'
 }
+
+
+document.getElementById('userWelcome').innerHTML = sessionStorage.getItem('loggedUser');
+
+var name = document.getElementById("txtUsername");
+                        document.getElementById("iniciar").addEventListener("click", function () { 
+                          alert('Olá ' + txtUsername.value + " " + '!');
+                        })

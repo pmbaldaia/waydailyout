@@ -44,6 +44,19 @@ section {
   font-family: 'Handlee';
 }
 
+.userWelcome {
+  background-color: Transparent;
+  background-repeat: no-repeat;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  outline: none;
+  visibility: hidden;
+}
+
+.avatar {
+  width: 400px;
+}
 
 hr {
   background-color: #FDC634;

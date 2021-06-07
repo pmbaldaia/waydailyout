@@ -77,7 +77,7 @@ export default class ActivityView {
             html +=`<button id="${activity.name}" class="btn btn-primary edit">Editar</buttons>`
             html += `<button id="${activity.name}" class="btn btn-danger remove">Remover</button>`
         }else {
-            html += `<button id="${activity.name}" class="btn btn-primary see">Ver Mais</button>`
+            html += `<button id="${activity.name}" class="btn btn-primary see">Consultar mais informação</button>`
         }
 
         html += `

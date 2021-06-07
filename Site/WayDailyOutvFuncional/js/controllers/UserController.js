@@ -18,7 +18,7 @@ export default class UserController {
         if (this.users.some(user => user.username === username && user.password === password)) {
             sessionStorage.setItem('loggedUser', username)
         } else {
-            throw Error('Erro login!');
+            throw Error('Username/Password inválidos!');
         }
     } 
 

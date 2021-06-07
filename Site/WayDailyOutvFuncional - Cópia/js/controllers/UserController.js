@@ -20,13 +20,7 @@ export default class UserController {
         } else {
             throw Error('Erro login!');
         }
-    }
-
-    delete() {
-        this.users (this.users.filter(username => username.name != name))
-        localStorage.removeItem('users', JSON.stringify(this.users))
-    }
-   
+    } 
 
     logout() {
         sessionStorage.removeItem('loggedUser')
@@ -41,6 +35,11 @@ export default class UserController {
         return this.users.some(user=>user.username == name && user.type=='admin')
     }
 
+    delete(name) {
+        this.users (this.users.filter(username => username.name != name))
+        localStorage.removeItem('users', JSON.stringify(this.users))
+    }
+    
     edit(username = '', password){
         let user = sessionStorage['loggedUser']
         let novoPerfil = localStorage['users']

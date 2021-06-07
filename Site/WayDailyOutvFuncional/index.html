@@ -26,13 +26,13 @@
                 overflow: hidden;
                 outline:none;
                 visibility: hidden;">
-                    <b>Bem-vindo ! </b><span style="color:red;" id="userWelcome"></span>
+                    <b>Bem-vindo </b><span style="color:red;" id="userWelcome"></span>
                 </button>
                 <script type='text/javascript'>
                     document.getElementById('userWelcome').innerHTML = sessionStorage.getItem('loggedUser');
                 </script> 
-                <button id="btnProfile" class="btn btn-primary" type="button" style="visibility: hidden;">Perfil</button>
-                <button id="btnAdmin" class="btn btn-primary" type="button" style="visibility: hidden;" onclick="userPage();">Utilizadores</button>
+                <button id="btnProfile" class="btn btn-primary" type="button" style="visibility: hidden;" onclick="userPage();">Perfil</button>
+                <button id="btnAdmin" class="btn btn-primary" type="button" style="visibility: hidden;" onclick="adminPage();">Utilizadores</button>
                 <button id="btnLogin" class="btn btn-primary" type="button" data-bs-toggle="modal"
                     data-bs-target="#mdlLogin">Iniciar Sessão</button>&nbsp;
                 <button id="btnRegister" class="btn btn-warning" type="button" data-bs-toggle="modal"
@@ -188,10 +188,8 @@
                         <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Fechar</button>
                     </div>
                     <script>
-                        // Just get a reference to the element
                         var name = document.getElementById("txtUsername");
                         document.getElementById("iniciar").addEventListener("click", function () { 
-                          // Then, use the properties of the (already gotten) elment as you need them:
                           alert('Olá ' + txtUsername.value + " " + '!');
                         })
                       </script>

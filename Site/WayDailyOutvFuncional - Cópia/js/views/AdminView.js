@@ -39,7 +39,6 @@ export default class AdminView{
         this.bindRemoveEvent()
     }
 
-
     bindRemoveEvent() {
         for (const btnRemove of document.getElementsByClassName("delete")) {
             btnRemove.addEventListener('click', event => {

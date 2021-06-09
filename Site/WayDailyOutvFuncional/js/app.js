@@ -3,7 +3,6 @@ import ActivitiesView from './views/ActivitiesView.js'
 import DetailActivityView from './views/DetailActivityView.js'
 import NewActivityView from './views/NewActivityView.js'
 import AdminView from './views/AdminView.js'
-import ProfileView from './views/ProfileView.js'
 
 class App {
     constructor() {
@@ -25,12 +24,6 @@ class App {
             ],
             'admin': [
                 AdminView
-            ],
-            'editProfile': [
-                ProfileView
-            ],
-            'profile': [
-                ProfileView
             ]
         };
 
@@ -59,7 +52,7 @@ class App {
 
     #importDataFixtures() {
         const activities = [
-
+            
             {
                 id: 1,
                 name: 'Artes e Ofícios',
@@ -89,50 +82,7 @@ class App {
                 description: 'Aprender a aprender',
             }
         ];
-
-        // const task = [
-        //     {
-        //         id: 1,
-        //         name: 'Como tocar piano primeira lição!',
-        //         author: 'Dylan Laine',
-        //         category: 'music',
-        //         photo: '../img/imagens/Musica/10079.png',
-        //         video: 'https://www.youtube.com/watch?v=EPxqPw1N1Qk'
-        //     },
-        //     {
-        //         id: 2,
-        //         name: 'Karaoke- Whenever, Wherever- Shakira',
-        //         author: 'KaraFun',
-        //         category: 'music',
-        //         photo: '../img/imagens/Musica/3.png',
-        //         video: 'https://www.youtube.com/watch?v=gqYFhzRHB50'
-        //     },
-        //     {
-        //         id: 3,
-        //         name: 'Reflections of Calm',
-        //         author: 'Bob Ross',
-        //         category: 'art',
-        //         photo: '../img/imagens/5218 - Cópia.png',
-        //         video: 'https://www.youtube.com/watch?v=kJFB6rH3z2A'
-        //     },
-        //     {
-        //         id: 4,
-        //         name: 'Bolo de iogurte',
-        //         author: 'Made by Choices',
-        //         category: 'food',
-        //         photo: '../img/imagens/cozinhar.PNG',
-        //         video: 'https://www.youtube.com/watch?v=DeHnUDG9zuM'
-        //     },
-        //     {
-        //         id: 5,
-        //         name: 'Aula de Francês #01',
-        //         author: 'Francês Básico',
-        //         category: 'learn',
-        //         photo: '../img/imagens/5514.png',
-        //         video: 'https://www.youtube.com/watch?v=LWNvubHRIkQ'
-        //     }
-        // ];
-
+        
         const users = [
             {
                 id: 1,
@@ -151,15 +101,6 @@ class App {
                 username: 'Pedro',
                 password: 'mic',
                 type: 'admin'
-            },
-            {
-                id: 4,
-                username: 'user2',
-                password: 'pass2',
-                email: 'user2@gmail.com',
-                genre: 'feminino',
-                local: 'Porto',
-                type: 'user'
             }
 
         ];
@@ -167,9 +108,6 @@ class App {
         if (!localStorage.activities) {
             localStorage.setItem('activities', JSON.stringify(activities));
         }
-        // if (!localStorage.tasks) {
-        //     localStorage.setItem('activities', JSON.stringify(task));
-        // }
         if (!localStorage.users) {
             localStorage.setItem('users', JSON.stringify(users));
         }

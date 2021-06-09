@@ -42,7 +42,7 @@ export default class AdminView{
     bindRemoveEvent() {
         for (const btnRemove of document.getElementsByClassName("delete")) {
             btnRemove.addEventListener('click', event => {
-                this.UserController.delete(event.target.id)
+                this.users.delete(event.target.id)
                 this.renderTable(this.UserController.getUsers(this.txtUsername.value))
             })
         }

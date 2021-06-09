@@ -42,23 +42,23 @@ export default class UserController {
     
     edit(username = '', password){
         let user = sessionStorage['loggedUser']
-        let novoPerfil = localStorage['users']
-        novoPerfil = JSON.parse(novoPerfil)
+        let update = localStorage['users']
+        update = JSON.parse(update)
 
         if (username == '') {
             username = user
         }
 
-        for (let i = 0; i < novoPerfil.length; i++){
-            if(novoPerfil[i].username == user){
+        for (let i = 0; i < update.length; i++){
+            if(update[i].username == user){
                 if (username != user){
-                    novoPerfil[i].username = username
+                    update[i].username = username
                     sessionStorage.setItem('loggedUser', username)
                 }
                 if (password != ''){
-                    novoPerfil[i].password = password
+                    update[i].password = password
                 }
-                this.users[i] = novoPerfil[i]
+                this.users[i] = update[i]
                 localStorage.setItem('users', JSON.stringify(this.users))
             }
         }

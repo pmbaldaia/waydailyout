@@ -1,0 +1,155 @@
+@import url('https://fonts.google.com/specimen/Handlee?query=handle');
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Rubik';
+  margin-top: 65px;
+  ;
+
+}
+
+th {
+  color: #203C8A;
+  font-family: Rubik;
+}
+
+
+.logo {
+  width: 148px;
+  height: 43px;
+  margin-left: 82px;
+}
+
+section {
+  background-image: linear-gradient(#D4E1E8, #fff 100%);
+}
+
+
+.titule {
+  text-align: left;
+  margin-top: 12px;
+  color: #203C8A;
+  font-size: 30px;
+  font-family: 'Handlee';
+}
+
+.subtitule {
+  text-align: left;
+  color: #203C8A;
+  font-size: 20px;
+  font-family: 'Handlee';
+}
+
+.userWelcome {
+  background-color: Transparent;
+  background-repeat: no-repeat;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  outline: none;
+  visibility: hidden;
+}
+
+.avatar {
+  width: 400px;
+}
+
+hr {
+  background-color: #FDC634;
+}
+
+.bg-navbar {
+  background: #E5ECF0;
+  color: #203C8A;
+}
+
+
+.navbar-blue {
+  color: #203C8A;
+}
+
+h4,
+p {
+  font-family: 'Rubik';
+
+}
+
+#mapper {
+  height: 400px;
+  width: 100%;
+}
+
+.art {
+  background: #fBE3FA;
+}
+
+.music {
+  background: #f7daa2;
+}
+
+.food {
+  background: #fedcce;
+}
+
+.learn {
+  background: #e9f3fd;
+}
+
+.beauty {
+  background: #fdf2bb;
+}
+
+.family {
+  background: #f5ece2;
+}
+
+.sports {
+  background: #b1c7dd;
+}
+
+.dance {
+  background: #dcf8c8;
+}
+
+
+#btn {
+  background: #203C8A;
+
+}
+
+.active {
+  background: #203C8A;
+  color: white;
+}
+
+.active2 {
+  background: #FDC634;
+  color: black;
+}
+
+.active3 {
+  background: #FDC634;
+  color: #203C8A;
+}
+
+#mapper {
+  height: 400px;
+  width: 100%;
+}
+
+u {
+  background-color: #FDC634;
+}
+
+a {
+  color: black;
+}
+
+h5 {
+  padding-top: 15px;
+  font-size: 12px;
+}

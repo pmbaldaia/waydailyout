@@ -53,6 +53,6 @@ function dashboard(){
 document.getElementById('userWelcome').innerHTML = sessionStorage.getItem('loggedUser');
 
 var name = document.getElementById("txtUsername");
-                        document.getElementById("iniciar").addEventListener("click", function () { 
-                          alert('Olá ' + txtUsername.value + " " + '!');
-                        })
+                       document.getElementById("iniciar").addEventListener("click", function () { 
+                       alert('Olá ' + txtUsername.value + " " + '!');
+                   })

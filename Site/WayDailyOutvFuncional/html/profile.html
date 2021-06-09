@@ -2,7 +2,8 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>WayDailyOut</title>
     <link rel="stylesheet" href="../css/index.css">
     <link rel="stylesheet" href="../css/bootstrap.min.css">
@@ -20,7 +21,7 @@
             <a class="navbar-brand" href="../index.html"><img class="logo" src="../img/Logo.png"></a>
             <form class="d-flex">
                 <button class="userWelcome"">
-                    <b>Iniciou Sessão com </b><span style="color:red;" id="userWelcome"></span>
+                    <b>Iniciou Sessão com </b><span style=" color:red;" id="userWelcome"></span>
                 </button>
                 <button class="btn btn-primary" type="button" onclick="dashboard();">Voltar à Página Inicial</button>
             </form>
@@ -35,20 +36,19 @@
                     <h1 class="titule">Início</h1>
                     <p class="subtitule">Perfil</p>
                     <hr class="my-2" />
-                    <img class="img-fluid rounded-circle mb-4 avatar " src="../img/user-3331256_1280.png"  />
+                    <img class="img-fluid rounded-circle mb-4 avatar " src="../img/user-3331256_1280.png" />
                     <!--Nome utilizador-->
                     <h1 class="fs-3 fw-bolder" id="profileUsername"></h1>
-                    <button id="btnEditProfile" class="btn btn-danger" type="button" style="visibility: visible;"
-                    data-bs-toggle="modal" data-bs-target="#mdlEditProfile">Editar
-                    perfil</button>
+                    <button id="btnEditProfile" class="btn btn-danger" type="button" onclick="editProfilePage();">Editar
+                        perfil</button>
                 </div>
             </div>
         </div>
     </section>
-    
+
 
     <!-- MODAL REGISTO -->
-    <div class="modal fade" id="mdlEditProfile" tabindex="-1">
+    <!--<div class="modal fade" id="mdlEditProfile" tabindex="-1">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -92,7 +92,7 @@
                 </form>
             </div>
         </div>
-    </div>
+    </div>-->
 
     <script type="module" src="../js/app.js"></script>
     <script src="../js/views/Map.js"></script>

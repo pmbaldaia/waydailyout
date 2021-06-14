@@ -16,25 +16,19 @@ export default class ProfileView {
 
 
         this.renderEditForm()
-        this.renderNewPersonalData()
+        // this.renderNewPersonalData()
     }
 
     renderEditForm() {
-        let userEdit = this.userController.allUsers()
+        let userEdit = this.userController.getUser()
 
-        let user = userEdit.find(function (item) {
-            return item.id == userId;
-        })
+        this.usernameEdit = userEdit.username
+        this.genderEdit = userEdit.genre
+        this.emailEdit = userEdit.email
+        // this.dateEdit.value = user.date
+        this.localEdit = userEdit.local
+        this.passwordEditRegister = userEdit.password
 
-        if (this.userController.isLogged()) {
-            this.usernameEdit = user.username.value
-            this.genderEdit = user.genre.value
-            this.emailEdit = user.email.value
-            // this.dateEdit.value = user.date.value
-            this.localEdit = user.local.value
-            this.passwordEditRegister = user.password.value
-
-        }
 
 
 
@@ -55,29 +49,29 @@ export default class ProfileView {
 
 
 
-    renderNewPersonalData() {
-        this.frmEditProfile.addEventListener('submit', event => {
-            event.preventDefault();
+    // renderNewPersonalData() {
+    //     this.frmEditProfile.addEventListener('submit', event => {
+    //         event.preventDefault();
 
-            try {
-                this.userController.change(
-                    this.usernameEdit.value,
-                    this.genderEdit.value,
-                    this.emailEdit.value,
-                    this.dateEdit.value,
-                    this.localEdit.value,
-                    this.passwordEditRegister.value
-                );
-                this.displayMessage('Dados alterados com sucesso!', 'success');
+    //         try {
+    //             this.userController.change(
+    //                 this.usernameEdit.value,
+    //                 this.genderEdit.value,
+    //                 this.emailEdit.value,
+    //                 this.dateEdit.value,
+    //                 this.localEdit.value,
+    //                 this.passwordEditRegister.value
+    //             );
+    //             this.displayMessage('Dados alterados com sucesso!', 'success');
 
-                // Espera 1 seg. antes de fazer refresh à pagina
-                // Assim o utilizador pode ver a mensagem na modal antes de a mesma se fechar
-                setTimeout(() => { location.href = "../html/profile.html" }, 1000);
-            } catch (err) {
-                this.displayMessage(err, 'danger');
-            }
-        });
-    }
+    //             // Espera 1 seg. antes de fazer refresh à pagina
+    //             // Assim o utilizador pode ver a mensagem na modal antes de a mesma se fechar
+    //             setTimeout(() => { location.href = "../html/profile.html" }, 1000);
+    //         } catch (err) {
+    //             this.displayMessage(err, 'danger');
+    //         }
+    //     });
+    // }
 
     displayMessage(message, type) {
         this.editUserMessage.innerHTML =

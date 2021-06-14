@@ -5,6 +5,7 @@ import NewActivityView from './views/NewActivityView.js'
 import AdminView from './views/AdminView.js'
 import ProfileView from './views/ProfileView.js'
 import TasksView from './views/TasksView.js'
+import StatisticsView from './views/StatisticsView.js'
 
 class App {
     constructor() {
@@ -23,7 +24,8 @@ class App {
                 DetailActivityView
             ],
             'activities': [
-                TasksView
+                TasksView,
+                NavBarView
             ],
             'newActivity': [
                 NewActivityView
@@ -35,7 +37,8 @@ class App {
                 ProfileView
             ],
             'profile': [
-                ProfileView
+                ProfileView,
+                StatisticsView
             ]
         };
 

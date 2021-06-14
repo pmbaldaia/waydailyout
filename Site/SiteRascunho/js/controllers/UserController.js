@@ -118,6 +118,22 @@ export default class UserController {
         return users
     }
 
+    getUser() {
+        let users = sessionStorage.getItem('loggedUser')
+        let user = localStorage.getItem('user')
+
+        if (users == user) {
+            return JSON.parse(user)
+        }
+        return users
+        // let user = []
+        // if (!users) {
+        //     return user
+        // } else {
+        //     user = JSON.parse(users)
+        //     return user
+        // }
+    }
 
     //Mudar os dados do utilizador
     change(name, gender, email, date, local, password) {

@@ -69,12 +69,12 @@ export default class TasksView {
                     <p class="card-text">${task.category}</p>
                     
             `
-        // if (this.userController.isAdmin()) {
-        //     html += `<button id="${task.name}" class="btn btn-primary edit">Editar</buttons>`
-        //     html += `<button id="${task.name}" class="btn btn-danger delete">Remover</button>`
-        // } else {
-        //     html += `<button id="${task.name}" class="btn btn-primary view">Consultar mais informação</button>`
-        // }
+        if (this.userController.isAdmin()) {
+            html += `<button id="${task.name}" class="btn btn-primary edit">Editar</buttons>`
+            html += `<button id="${task.name}" class="btn btn-danger delete">Remover</button>`
+        } else {
+            html += `<button id="${task.name}" class="btn btn-primary view">Consultar mais informação</button>`
+        }
 
         html += `
                 </div>
@@ -84,22 +84,22 @@ export default class TasksView {
         return html
     }
 
-    // bindAddRemoveEvent() {
-    //     for (const btnDelete of document.getElementsByClassName("delete")) {
-    //         btnDelete.addEventListener('click', event => {
-    //             this.taskController.delete(event.target.id)
-    //             this.renderCatalog(this.taskController.getTasks(this.txtActivity.value, this.categories.value))
-    //         })
-    //     }
-    // }
+    bindAddRemoveEvent() {
+        for (const btnDelete of document.getElementsByClassName("delete")) {
+            btnDelete.addEventListener('click', event => {
+                this.taskController.delete(event.target.id)
+                this.renderCatalog(this.taskController.getTasks(this.txtActivity.value, this.categories.value))
+            })
+        }
+    }
 
-    // bindAddSeeMoreEvent() {
-    //     for (const btnView of document.getElementsByClassName("view")) {
-    //         btnView.addEventListener('click', event => {
-    //             this.taskController.setCurrentTask(event.target.id)
-    //             location.href = 'html/detailActivity.html';
-    //         })
-    //     }
-    // }
+    bindAddSeeMoreEvent() {
+        for (const btnView of document.getElementsByClassName("view")) {
+            btnView.addEventListener('click', event => {
+                this.taskController.setCurrentTask(event.target.id)
+                location.href = 'html/detailActivity.html';
+            })
+        }
+    }
 
 }

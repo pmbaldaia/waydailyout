@@ -153,3 +153,16 @@ h5 {
   padding-top: 15px;
   font-size: 12px;
 }
+
+#editProfilePhoto{
+  background-color: #FDC634;
+  color: #203C8A;
+}
+
+#editPhoto{
+  display: none;
+}
+
+#uploadPhoto{
+  cursor: pointer;
+}

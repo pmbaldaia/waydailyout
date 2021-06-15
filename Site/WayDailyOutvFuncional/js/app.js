@@ -56,28 +56,28 @@ class App {
                 id: 1,
                 name: 'Artes e Ofícios',
                 categories: 'art',
-                photo: './img/imagens/5218.png',
+                photo: '../img/imagens/5218.png',
                 description: 'Aqui podes aprender artes',
             },
             {
                 id: 2,
                 name: 'Música',
                 categories: 'music',
-                photo: './img/imagens/6954.png"',
+                photo: '../img/imagens/6954.png',
                 description: 'Irás ter aulas de música',
             },
             {
                 id: 3,
                 name: 'Comida',
                 categories: 'food',
-                photo: './img/imagens/252.png',
+                photo: '../img/imagens/252.png',
                 description: 'Podes aprender a cozinhar',
             },
             {
                 id: 4,
                 name: 'Aprender',
                 categories: 'learn',
-                photo: './img/imagens/5514.png',
+                photo: '../img/imagens/5514.png',
                 description: 'Aprender a aprender',
             }
         ];

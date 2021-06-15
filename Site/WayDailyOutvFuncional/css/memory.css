@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Slab');
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+body {
+    background-color: #E4E9F0;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 15px;
+}
+
+h1 {
+    font-family: 'Rubik';
+    font-weight: 400;
+    width: 100%;
+}
+
+.angular {
+    background-image: url('../img/sports/1.jpg')
+}
+
+.vue {
+    background-image: url('../img/sports/2.jpg')
+}
+
+.ionic {
+    background-image: url('../img/sports/3.jpg')
+}
+
+.react {
+    background-image: url('../img/sports/4.jpg')
+}
+
+.firebase {
+    background-image: url('../img/sports/5.jpg')
+}
+
+.gulp {
+    background-image: url('../img/sports/6.jpg')
+}
+
+.card-back {
+    height: 0;
+    padding-bottom: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    transform-style: preserve-3d;
+    transition: .4s all linear;
+    transform: rotateY(180deg);
+    backface-visibility: hidden;
+
+}
+
+.memory-box {
+    width: 680px;
+    padding: 10px;
+    margin: auto;
+    display: flex;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 8px 10px 22px rgba(0, 0, 0, 0.15);
+    flex-wrap: wrap;
+    perspective: 1000px;
+}
+
+.memory-card.flip .card-front,
+.memory-card.flip .card-back {
+    transform: rotateY(0deg);
+}
+
+.memory-card {
+    padding: 15px;
+    width: calc(25% - 20px);
+    height: calc(33.3% - 20px);
+    position: relative;
+    margin: 10px;
+    backface-visibility: hidden;
+
+}
+
+
+.card-front {
+    height: 100%;
+    transform-style: preserve-3d;
+    transform: rotateY(180deg);
+    transition: .4s all linear;
+    display: inline-block;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+    background-image: linear-gradient(to right bottom, #b2cdf6, #a5c5f6, #97bdf6, #89b5f6, #7badf6);
+    box-shadow: 3px 6px 18px #6d809d8a;
+    border-radius: 8px;
+}
+
+.card-ok .card-front {
+    background-image: linear-gradient(to right bottom, #f7daa2, #f7daa2, #f7daa2, #f7daa2, #f7daa2);
+    opacity: 0.7;
+}
+
+.header {
+    width: 100%;
+}
+
+.moves-div {
+    font-family: 'Rubik';
+}
+
+.restart {
+    font-family: 'Rubik';
+    font-size: 14px;
+    margin-top: 25px;
+    line-height: 40px;
+    display: inline-block;
+    padding: 0 15px;
+    background-color: #7badf6;
+    cursor: pointer;
+    border-radius: 20px;
+    color: #fff;
+    box-shadow: 0px 4px 10px #6781a78a;
+}
+
+
+.offset {
+    box-shadow: 0.3em 0.3em 0 0 var(--color), inset 0.3em 0.3em 0 0 var(--color);
+}
+
+.offset:hover,
+.offset:focus {
+    box-shadow: 0 0 0 0 var(--hover), inset 6em 3.5em 0 0 var(--hover);
+}
+
+.offset {
+    --color: #203C8A;
+    --hover: #203C8A;
+}
+
+button {
+    color: var(--color);
+    transition: 0.25s;
+}
+
+button:hover,
+button:focus {
+    border-color: var(--hover);
+    color: #fff;
+}
+
+
+button {
+    background: none;
+    border: 2px solid;
+    font: inherit;
+    line-height: 1;
+    margin: 0.5em;
+    padding: 1em 2em;
+}

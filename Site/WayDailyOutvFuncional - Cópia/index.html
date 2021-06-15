@@ -7,7 +7,8 @@
     <title>WayDailyOut</title>
     <link rel="stylesheet" href="./css/index.css">
     <link rel="stylesheet" href="./css/bootstrap.min.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <link rel="icon" type="image/x-icon" href="./img/Icon.png">
 
 </head>
@@ -17,19 +18,18 @@
     <!-- BARRA DE NAVEGAÇÃO -->
     <nav class="navbar bg-navbar fixed-top">
         <div class="container-fluid">
-            <a class="navbar-brand"href="index.html"><img class="logo" src="./img/Logo.png"></a>
+            <a class="navbar-brand" href="index.html"><img class="logo" src="./img/Logo.png"></a>
             <form class="d-flex">
                 <a class="nav-item nav-link" href="#">Atividades</a>
                 <a class="nav-item nav-link" href="#mapper">Apoios psicológicos</a>
                 <a class="nav-item nav-link" href="#">Estatísticas</a>
+                <a class="nav-item nav-link" id="btnGame" href="./html/game.html" style="visibility: hidden;">Jogos</a>
                 <button id="btnUserWelcome" class="userWelcome">
-                    <span style="color:#203C8A;"> Bem-vindo <b style="text-decoration: underline;" id="userWelcome"></b></span>
+                    <span style="color:#203C8A;"> Bem-vindo <b style="text-decoration: underline;"id="userWelcome"></b></span>
                 </button>
                 <button id="btnAdmin" class="btn btn-primary" type="button" style="visibility: hidden;" onclick="adminPage();">Utilizadores</button>
-                <button id="btnLogin" class="btn btn-primary" type="button" data-bs-toggle="modal"
-                    data-bs-target="#mdlLogin">Iniciar Sessão</button>&nbsp;
-                <button id="btnRegister" class="btn btn-warning" type="button" data-bs-toggle="modal"
-                    data-bs-target="#mdlRegister">Registar</button>
+                <button id="btnLogin" class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#mdlLogin">Iniciar Sessão</button>&nbsp;
+                <button id="btnRegister" class="btn btn-warning" type="button" data-bs-toggle="modal" data-bs-target="#mdlRegister">Registar</button>
                 <button id="btnProfile" class="btn btn-primary" type="button" style="visibility: hidden;" onclick="userPage();">Perfil</button>
                 <button id="btnLogout" class="btn btn-danger" type="button" style="visibility: hidden;">Sair</button>
 
@@ -37,170 +37,261 @@
         </div>
     </nav>
     <section>
-    <!-- CATÁLOGO -->
-    <div class="container">
-        <!-- CATÁLOGO: TITULOS -->
-        <div class="row"> 
-            <div class="col">
-                <h1 class="titule">Atividades</h1>
-                <p class="subtitule">Mais populares</p>
-                <hr class="my-2" />
-            </div>
-        </div>
-        <!-- CATÁLOGO: FORMULÁRIO PARA FILTROS E ORDENAÇÃO -->
-        <div class="row">
-            <div class="col">
-                <form class="form-inline">
-                    <div class="form-group">
-                        <label for="categories">Categorias: </label>
-                        <select class="form-control m-2" name="" id="categories">
-                            <option value="categories">Todas</option>
-                            <option value="art">Artes e Ofícios</option>
-                            <option value="music">Música</option>
-                            <option value="food">Comida</option>
-                            <option value="learn">Aprender</option>
-                            <option value="beauty">Beleza</option>
-                            <option value="family">Família</option>
-                            <option value="sports">Atividade Física</option>
-                            <option value="dance">Dança</option>
-                        </select>
-                    </div>
-                    <div class="form-group m-2">
-                        <label for="txtActivity">Nome da atividade:</label>
-                        <input id="txtActivity" type="text" class="form-control m-2" />
-                    </div>
-                    <button id="btnFilter" type="button" class="btn btn-primary">FILTRAR</button>
-                    <button id="btnSort" type="button" class="btn btn-primary m-2">ORDENAR</button>
-                    <button id="btnAdd" type="button" class="btn btn-warning m-2" style="visibility: hidden">ADICIONAR ATIVIDADE</button>
-                </form>
-            </div>
-        </div>
-        <!-- CATÁLOGO: EXIBIÇÃO DAS ATIVIDADES (VAZIO INICIALMENTE) -->
-        <div class="row">
-            <div class="col">
-                <p id="catalog"></p>
-            </div>
-        </div>
-        <div class="row">
-            <h2 class="titule">Música</h2>
-            <hr class="my-2" />
-            <p id="catalogs"></p>
-        </div>
-        <div class="row">
-            <h2 class="titule">Atividade Física</h2>
-            <hr class="my-2" /> 
-        </div>        
-        <div class="row">
-            <h2 class="titule">Apoio Psicológico</h2>
-            <hr class="my-2" />
-            <p id="mapper"></p>
-        </div>
-        
-    </div>
-
-
-    <!-- MODAL REGISTO -->
-    <div class="modal fade py-5" id="mdlRegister" tabindex="-1" >
-        <div class="modal-dialog">
-            <div class="modal-content col-md-300 mx-auto">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Registar</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <!-- CATÁLOGO -->
+        <div class="container">
+            <!-- CATÁLOGO: TITULOS -->
+            <div class="row">
+                <div class="col">
+                    <h1 class="titule">Atividades</h1>
+                    <p class="subtitule">Mais populares</p>
+                    <hr class="my-2" />
                 </div>
-                <form id="frmRegister">
-                    <div class="modal-body form-group row">
-
-                        <div class="col-sm-6">
-                            <label for="txtUsernameRegister" class="form-label">Utilizador</label>
-                            <input type="text" class="form-control" id="txtUsernameRegister"
-                                placeholder="Introduza um utilizador" />
-                        </div>
-                        <div class="col-sm-6">
-                            <label for="txtEmail" class="form-label">Email</label>
-                            <input type="txt" class="form-control" id="txtEmail"
-                                placeholder="Introduza o seu email" />
-                        </div>
-                        <div class="col-sm-6">
-                            <label for="txtPasswordRegister" class="form-label">Password</label>
-                            <input type=" password" class="form-control" id="txtPasswordRegister"
-                                placeholder="Introduza uma password" />
-                        </div>
-                        <div class="col-sm-6">
-                            <label for="txtPasswordRegister2" class="form-label">Repetir Password</label>
-                            <input type=" password" class="form-control" id="txtPasswordRegister2"
-                                placeholder="Repita password" />
-                        </div>
-                        <div class="col-sm-6">
-                            <label for="txtGenre" class="form-label">Género</label>
-                            <select class="form-control form-control-sm" id="txtGenre">
-                                <option>Feminino</option>
-                                <option>Masculino</option>
+            </div>
+            <!-- CATÁLOGO: FORMULÁRIO PARA FILTROS E ORDENAÇÃO -->
+            <div class="row">
+                <div class="col">
+                    <form class="form-inline">
+                        <div class="form-group">
+                            <label for="categories">Categorias: </label>
+                            <select class="form-control m-2" name="" id="categories">
+                                <option value="categories">Todas</option>
+                                <option value="art">Artes e Ofícios</option>
+                                <option value="music">Música</option>
+                                <option value="food">Comida</option>
+                                <option value="learn">Aprender</option>
+                                <option value="beauty">Beleza</option>
+                                <option value="family">Família</option>
+                                <option value="sports">Atividade Física</option>
+                                <option value="dance">Dança</option>
                             </select>
                         </div>
-                        <div class="col-sm-6">
-                            <label for="txtLocal" class="form-label">Local</label>
-                            <input type="text" class="form-control" id="txtLocal"
-                                placeholder="Introduza a sua localidade" />
+                        <div class="form-group m-2">
+                            <label for="txtActivity">Nome da atividade:</label>
+                            <input id="txtActivity" type="text" class="form-control m-2" />
                         </div>
-                        
-                        <div id="registerMessage" class="mb-3"></div>
-
-                    </div>
-                    <div class="modal-footer">
-                        <input type="submit" class="btn btn-primary" value="Registar"></input>
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-
-    <!-- MODAL LOGIN -->
-    <div class="modal fade" id="mdlLogin" tabindex="-1">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Iniciar Sessão</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        <button id="btnFilter" type="button" class="btn btn-primary">FILTRAR</button>
+                        <button id="btnSort" type="button" class="btn btn-primary m-2">ORDENAR</button>
+                        <button id="btnAdd" type="button" class="btn btn-warning m-2"
+                            style="visibility: hidden">ADICIONAR ATIVIDADE</button>
+                    </form>
                 </div>
-                <form id="frmLogin">
-                    <div class="modal-body">
+            </div>
+            <!-- CATÁLOGO: EXIBIÇÃO DAS ATIVIDADES (VAZIO INICIALMENTE) -->
+            <div class="row">
+                <div class="col">
+                    <p id="catalog"></p>
+                </div>
+            </div>
+            <div class="row">
+                <h2 class="titule">Música</h2>
+                <hr class="my-2" />
+                <p id="catalogs"></p>
+                <div class="row justify-content-center">
+                    <div class="col-sm-6 col-lg-3">
+                        <div class="card clean-card text-center"><img class="card-img-top w-100 d-block music"
+                                src="../WayDailyOutvFuncional/img/imagens/10079.png">
+                            <div class="card-body info">
+                                <h4 class="card-title">Como tocar piano</h4>
+                                <p class="card-text">Primeira Lição</p>
+                                <a href="music.html"><button class="btn btn-primary">Consultar atividade</button></a>
+                            </div>
 
-                        <div class="mb-3">
-                            <label for="txtUsername" class="form-label">Utilizador</label>
-                            <input type="text" class="form-control" id="txtUsername" placeholder="Introduza o seu utilizador" />
                         </div>
-                        <div class="mb-3">
-                            <label for="txtPassword" class="form-label">Password</label>
-                            <input type="password" class="form-control" id="txtPassword" placeholder="Introduza a sua password" />
+                    </div>
+                    <div class="col-sm-6 col-lg-3">
+                        <div class="card clean-card text-center"><img class="card-img-top w-100 d-block music"
+                                src="../WayDailyOutvFuncional/img/imagens/10079.png">
+                            <div class="card-body info">
+                                <h4 class="card-title">Tocar Violino</h4>
+                                <p class="card-text">Tocar</p>
+                                <button class="btn btn-primary see">Consultar atividade</button>
+                            </div>
                         </div>
-                        <div id="loginMessage" class="mb-3"></div>
                     </div>
-                    <div class="modal-footer">
-                        <input type="submit" class="btn btn-primary" value="Iniciar Sessão" id="iniciar"></input>
-                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Fechar</button>
+                    <div class="col-sm-6 col-lg-3">
+                        <div class="card clean-card text-center"><img class="card-img-top w-100 d-block music"
+                                src="../WayDailyOutvFuncional/img/imagens/10079.png">
+                            <div class="card-body info">
+                                <h4 class="card-title">Karaoke</h4>
+                                <p class="card-text">Cantar</p>
+                                <button class="btn btn-primary see">Consultar atividade</button>
+                            </div>
+                        </div>
                     </div>
-                </form>
+                    <div class="col-sm-6 col-lg-3">
+                        <div class="card clean-card text-center"><img class="card-img-top w-100 d-block music"
+                                src="../WayDailyOutvFuncional/img/imagens/10079.png">
+                            <div class="card-body info">
+                                <h4 class="card-title">Tocar guitarra</h4>
+                                <p class="card-text">Aprender</p>
+                                <button class="btn btn-primary see">Consultar atividade</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <h2 class="titule">Atividade Física</h2>
+                <hr class="my-2" />
+                <div class="row justify-content-center">
+                    <div class="col-sm-6 col-lg-3">
+                        <div class="card clean-card text-center"><img class="card-img-top w-100 d-block sports"
+                                src="../WayDailyOutvFuncional/img/imagens/Exerciciofisico/Exercisio-removebg-preview - Cópia (2).png ">
+                            <div class="card-body info">
+                                <h4 class="card-title">10 minutos de corrida</h4>
+                                <p class="card-text"></p>
+                                <button class="btn btn-primary see">Consultar atividade</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-lg-3">
+                        <div class="card clean-card text-center"><img class="card-img-top w-100 d-block sports"
+                                src="../WayDailyOutvFuncional/img/imagens/Exerciciofisico/Exercisio-removebg-preview - Cópia (3).png">
+                            <div class="card-body info">
+                                <h4 class="card-title">20 min treino - corpo inteiro </h4>
+                                <p class="card-text"></p>
+                                <button class="btn btn-primary see">Consultar atividade</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-lg-3">
+                        <div class="card clean-card text-center"><img class="card-img-top w-100 d-block sports"
+                                src="../WayDailyOutvFuncional/img/imagens/Exerciciofisico/Exercisio-removebg-preview - Cópia (4).png">
+                            <div class="card-body info">
+                                <h4 class="card-title">10 min treino - braços</h4>
+                                <p class="card-text"></p>
+                                <button class="btn btn-primary see">Consultar atividade</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-lg-3">
+                        <div class="card clean-card text-center"><img class="card-img-top w-100 d-block sports"
+                                src="../WayDailyOutvFuncional/img/imagens/Exerciciofisico/Exercisio-removebg-preview - Cópia.png">
+                            <div class="card-body info">
+                                <h4 class="card-title">20 min boxing</h4>
+                                <p class="card-text"></p>
+                                <button class="btn btn-primary see">Consultar atividade</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <h2 class="titule">Apoio Psicológico</h2>
+                <hr class="my-2" />
+                <p id="mapper"></p>
+            </div>
+
+        </div>
+
+
+        <!-- MODAL REGISTO -->
+        <div class="modal fade py-5" id="mdlRegister" tabindex="-1">
+            <div class="modal-dialog">
+                <div class="modal-content col-md-300 mx-auto">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Registar</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <form id="frmRegister">
+                        <div class="modal-body form-group row">
+
+                            <div class="col-sm-6">
+                                <label for="txtUsernameRegister" class="form-label">Utilizador</label>
+                                <input type="text" class="form-control" id="txtUsernameRegister"
+                                    placeholder="Introduza um utilizador" />
+                            </div>
+                            <div class="col-sm-6">
+                                <label for="txtEmail" class="form-label">Email</label>
+                                <input type="txt" class="form-control" id="txtEmail"
+                                    placeholder="Introduza o seu email" />
+                            </div>
+                            <div class="col-sm-6">
+                                <label for="txtPasswordRegister" class="form-label">Password</label>
+                                <input type=" password" class="form-control" id="txtPasswordRegister"
+                                    placeholder="Introduza uma password" />
+                            </div>
+                            <div class="col-sm-6">
+                                <label for="txtPasswordRegister2" class="form-label">Repetir Password</label>
+                                <input type=" password" class="form-control" id="txtPasswordRegister2"
+                                    placeholder="Repita password" />
+                            </div>
+                            <div class="col-sm-6">
+                                <label for="txtGenre" class="form-label">Género</label>
+                                <select class="form-control form-control-sm" id="txtGenre">
+                                    <option>Feminino</option>
+                                    <option>Masculino</option>
+                                </select>
+                            </div>
+                            <div class="col-sm-6">
+                                <label for="txtLocal" class="form-label">Local</label>
+                                <input type="text" class="form-control" id="txtLocal"
+                                    placeholder="Introduza a sua localidade" />
+                            </div>
+
+                            <div id="registerMessage" class="mb-3"></div>
+
+                        </div>
+                        <div class="modal-footer">
+                            <input type="submit" class="btn btn-primary" value="Registar"></input>
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
-    </div>
 
-</section>
+        <!-- MODAL LOGIN -->
+        <div class="modal fade" id="mdlLogin" tabindex="-1">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Iniciar Sessão</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <form id="frmLogin">
+                        <div class="modal-body">
+
+                            <div class="mb-3">
+                                <label for="txtUsername" class="form-label">Utilizador</label>
+                                <input type="text" class="form-control" id="txtUsername"
+                                    placeholder="Introduza o seu utilizador" />
+                            </div>
+                            <div class="mb-3">
+                                <label for="txtPassword" class="form-label">Password</label>
+                                <input type="password" class="form-control" id="txtPassword"
+                                    placeholder="Introduza a sua password" />
+                            </div>
+                            <div id="loginMessage" class="mb-3"></div>
+                        </div>
+                        <div class="modal-footer">
+                            <input type="submit" class="btn btn-primary" value="Iniciar Sessão" id="iniciar"></input>
+                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Fechar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </section>
 
     <script type="module" src="./js/app.js"></script>
-    <script src="./js/views/Map.js"></script>   
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDQ0b98TBOvhvyad75sfzdf0HssgqfTyFE&callback=initMap">
-    </script>
+    <script src="./js/views/Map.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+        crossorigin="anonymous"></script>
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDQ0b98TBOvhvyad75sfzdf0HssgqfTyFE&callback=initMap">
+        </script>
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-     integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-     crossorigin="anonymous"></script>
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-     integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-     crossorigin="anonymous"></script>
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-     integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-     crossorigin="anonymous"></script>
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>

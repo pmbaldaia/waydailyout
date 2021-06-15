@@ -9,7 +9,7 @@ export default class ProfileView {
         this.usernameEdit = document.querySelector("#txtUsernameEdit")
         this.genderEdit = document.querySelector("#txtGenderEdit")
         this.emailEdit = document.querySelector("#txtEmailEdit")
-        this.dateEdit = document.querySelector("#txtDateEdit")
+        // this.dateEdit = document.querySelector("#txtDateEdit")
         this.localEdit = document.querySelector("#txtLocalEdit")
         this.passwordEditRegister = document.querySelector("#txtPasswordRegister")
         this.editUserMessage = document.getElementById('registerMessage');
@@ -24,12 +24,12 @@ export default class ProfileView {
         this.renderNewPersonalData()
     }
 
-    getPhoto(){
+    getPhoto() {
         photo = this.editBtn.files[0];
         //FileReader lê o conteúdo(DataUrl) dos ficheiros guardados no computador do utilizador
         const reader = new FileReader();
 
-        reader.addEventListener('load', function(){
+        reader.addEventListener('load', function () {
             this.userPhoto.setAtribute('src', reader.result)
         });
 
@@ -39,22 +39,18 @@ export default class ProfileView {
     }
 
     renderEditForm() {
-        let userEdit = this.userController.getUserData()
-
-        for (let i = 0; i < userEdit; i++) {
-            this.txtUsernameEdit = userEdit[i].username
-
-            // result += `<td>${utilizadores[i].username}</td>
-            //               <td>${utilizadores[i].password}</td>
-            //               <td>${utilizadores[i].type}</td>
-            //               <td><button id="${utilizadores[i].username}" class="btn btn-info alterar">Alterar tipo</button></td>
-            //               <td><button id="${utilizadores[i].username}" class="btn btn-warning edit">Editar</button></td>
-            //               <td><button id="${utilizadores[i].username}" class="btn btn-danger delete">Apagar</button></td>
-            //             </tr>`
-        }
-
-        // const userEdit = this.userController.getUserData()
-        // txtUsernameEdit.value = userEdit.username
+        this.frmEditProfile.addEventListener('submit', event => {
+            event.preventDefault();
+            try {
+                this.userController.editUser(this.usernameEdit.value, this.passwordEditRegister.value, this.emailEdit.value, this.genderEdit.value, this.localEdit.value, 'user');
+                this.displayMessage('edit', 'Utilizador editado com sucesso!', 'success');
+                // Espera 1 seg. antes de fazer refresh à pagina
+                // Assim o utilizador pode ver a mensagem na modal antes de a mesma se fechar
+                setTimeout(() => { location.reload() }, 1000);
+            } catch (err) {
+                this.displayMessage('edit', err, 'danger');
+            }
+        })
 
     }
 

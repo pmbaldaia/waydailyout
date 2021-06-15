@@ -81,7 +81,50 @@ class App {
                 description: 'Aprender a aprender',
             }
         ];
-        
+
+        const task = [
+            {
+                id: 1,
+                title: 'Como tocar piano primeira lição!',
+                author: 'Dylan Laine',
+                category: 'music',
+                img: '../img/imagens/Musica/10079.png',
+                video: 'https://www.youtube.com/watch?v=EPxqPw1N1Qk'
+            },
+            {
+                id: 2,
+                title: 'Karaoke- Whenever, Wherever- Shakira',
+                author: 'KaraFun',
+                category: 'music',
+                img: '../img/imagens/Musica/3.png',
+                video: 'https://www.youtube.com/watch?v=gqYFhzRHB50'
+            },
+            {
+                id: 3,
+                title: 'Reflections of Calm',
+                author: 'Bob Ross',
+                category: 'art',
+                img: '../img/imagens/5218 - Cópia.png',
+                video: 'https://www.youtube.com/watch?v=kJFB6rH3z2A'
+            },
+            {
+                id: 4,
+                title: 'Bolo de iogurte',
+                author: 'Made by Choices',
+                category: 'food',
+                img: '../img/imagens/cozinhar.PNG',
+                video: 'https://www.youtube.com/watch?v=DeHnUDG9zuM'
+            },
+            {
+                id: 5,
+                title: 'Aula de Francês #01',
+                author: 'Francês Básico',
+                category: 'learn',
+                img: '../img/imagens/5514.png',
+                video: 'https://www.youtube.com/watch?v=LWNvubHRIkQ'
+            }
+        ];
+
         const users = [
             {
                 id: 1,
@@ -115,6 +158,9 @@ class App {
 
         if (!localStorage.activities) {
             localStorage.setItem('activities', JSON.stringify(activities));
+        }
+        if (!localStorage.task) {
+            localStorage.setItem('tasks', JSON.stringify(task));
         }
         if (!localStorage.users) {
             localStorage.setItem('users', JSON.stringify(users));

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WayDailyOut - PPT</title>
+    <link rel="icon" type="image/x-icon" href="../img/Icon.png">
+    <link rel="stylesheet" href="../css/index.css">    
+    <link rel="stylesheet" href="../css/game.css">
+    <script src="https://kit.fontawesome.com/e391ce7786.js" crossorigin="anonymous"></script>
+    <script src="app.js" defer></script>
+</head>
+    
+<body>
+    <ul>
+        <li><button class="offset" onclick="dashboard();">Voltar Página Inicial</button></li>
+        <li><button class="offset" onclick="game1();">Jogo 2</button>
+    </ul>
+      
+    <h1>Jogo da Pedra, Papel e Tesoura</h1>
+    <h2 id="player1">Tente a sua sorte :)</h2>
+    <div class="container">
+        <div class="section">
+            <div class="info">
+                <h3>Você :</h3><span id="playerScore">0</span>
+            </div>
+            <div class="show">
+                <i class="fas fa-hand-rock"></i>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="info">
+                <h3>Computador :</h3><span id="computerScore">0</span>
+            </div>
+            <div class="show computer">
+                <i class="fas fa-hand-scissors"></i>
+            </div>
+        </div>
+    </div>
+    <h2 style="color: #203C8A" id="player2">Escolha o que pretende jogar!</h2>
+    <div class="selection">
+        <button class="fas fa-hand-rock" id="rock"></button>
+        <button class="fas fa-hand-paper" id="paper"></button>
+        <button class="fas fa-hand-scissors" id="scissors"></button>
+    </div>
+</body>
+</html>
+<!-- partial -->
+  <script  src="../js/views/Game.js"></script>
+
+</body>
+</html>

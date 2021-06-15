@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WayDailyOuy - Atividade</title>
+    <link rel="icon" type="image/x-icon" href="../img/Icon.png">
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <!-- REFERÊNCIA AO CSS DO BOOTSTRAP -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+
+</head>
+
+<body>
+    <div class="container-fluid">
+        <!-- DIV A APARECER A UTILZADORES NÃO AUTENTICADOS -->
+        <div id="userLoggedOutContent">
+            <div class="alert alert-danger" role="alert">Tem de estar autenticado para estares nesta área!</div>
+            <button class="btn btn-primary " onclick="dashboard();">Página Inicial</button>
+        </div>
+        <!-- DIV A APARECER A UTILZADORES AUTENTICADOS (FORM DE ADIÇÃO DE Atividade) -->
+
+        <div id="userLoggedInContent" style="visibility: hidden">
+            <h1 class="display-3">Adicionar Atividade</h1>
+            <hr class="my-2">
+            <div>
+                <form id="frmNewActivity">
+                    <div class="mb-3">
+                        <label for="txtActivity" class="form-label">Actividade</label>
+                        <input type="text" class="form-control" id="txtActivity" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="categories" class="form-label">Categorias</label>
+                        <select class="form-control" id="categories">
+                            <option value="all">Todas</option>
+                            <option value="art">Artes e Ofícios</option>
+                            <option value="music">Música</option>
+                            <option value="food">Comida</option>
+                            <option value="learn">Aprender</option>
+                            <option value="beauty">Beleza</option>
+                            <option value="family">Família</option>
+                            <option value="sports">Atividade Física</option>
+                            <option value="dance">Dança</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="txtPhoto" class="form-label">Foto Link</label>
+                        <input type="url" class="form-control" id="txtPhoto" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="txtDescription" class="form-label">Descrição</label>
+                        <textarea class="form-control" id="txtDescription" rows="3"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">ADICIONAR</button>
+                    <button type="reset" class="btn btn-danger">LIMPAR</button>
+                </form>
+            </div>
+            <br>
+            <div id="newActivityMessage"></div>
+        </div>
+    </div>
+    <!-- REFERÊNCIA AO APP.JS -->
+    <script type="module" src="../js/app.js"></script>
+    <script src="../js/views/Map.js"></script>
+    <!-- REFERÊNCIA AO JS DO BOOTSTRAP E DEPENDÊNCIAS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

@@ -1,0 +1,151 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #D4E1E8;
+    font-family: 'Rubik';
+
+}
+
+h1 {
+    font-family: 'Rubik';
+    font-weight: 800;
+    margin: 15px 0;
+    color: #203C8A;
+}
+
+.container {
+    display: flex;
+
+}
+
+.container .section {
+    width: 350px;
+    margin: 20px 50px;
+}
+
+.section .info {
+    background: rgb(10, 10, 10);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+}
+
+.info span,
+.info h3 {
+    font-size: 25px;
+    font-weight: bold;
+    margin: 0px 10px;
+    font-family: 'Rubik';
+    color: white;
+}
+
+.show {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgb(41, 40, 40);
+    height: 220px;
+}
+
+.show i {
+    font-size: 100px;
+    color: #FDC634;
+}
+
+h2 {
+    font-family: 'Rubik';
+    font-weight: bold;
+    padding: 5px;
+    color: #203C8A;
+}
+
+.selection {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 350px;
+    height: 100px;
+}
+
+.selection button {
+    margin: 0 20px;
+    padding: 25px;
+    border-radius: 50%;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background: rgb(41, 40, 40);
+    font-size: 33px;
+    color: #FDC634;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    border: 1px solid #e7e7e7;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: #666;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover:not(.active) {
+    background-color: #ddd;
+}
+
+
+.offset {
+    box-shadow: 0.3em 0.3em 0 0 var(--color), inset 0.3em 0.3em 0 0 var(--color);
+}
+
+.offset:hover,
+.offset:focus {
+    box-shadow: 0 0 0 0 var(--hover), inset 6em 3.5em 0 0 var(--hover);
+}
+
+.offset {
+    --color: #203C8A;
+    --hover: #203C8A;
+}
+
+button {
+    color: var(--color);
+    transition: 0.25s;
+}
+
+button:hover,
+button:focus {
+    border-color: var(--hover);
+    color: #fff;
+}
+
+
+button {
+    background: none;
+    border: 2px solid;
+    font: inherit;
+    line-height: 1;
+    margin: 0.5em;
+    padding: 1em 2em;
+}

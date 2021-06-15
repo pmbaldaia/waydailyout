@@ -20,6 +20,9 @@
         <div class="container-fluid">
             <a class="navbar-brand" href="../index.html"><img class="logo" src="../img/Logo.png"></a>
             <form class="d-flex">
+                <a class="nav-item nav-link" href="#">Atividades</a>
+                <a class="nav-item nav-link" href="#">Apoios psicológicos</a>
+                <a class="nav-item nav-link" href="#">Estatísticas</a>
                 <button class="userWelcome"">
                     <b>Iniciou Sessão com </b><span style=" color:red;" id="userWelcome"></span>
                 </button>
@@ -36,11 +39,15 @@
                     <h1 class="titule">Início</h1>
                     <p class="subtitule">Perfil</p>
                     <hr class="my-2" />
-                    <img class="img-fluid rounded-circle mb-4 avatar " src="../img/user-3331256_1280.png" />
+                    <img class="img-fluid rounded-circle mb-4 avatar " src="../img/user-3331256_1280.png" id="userPhoto" />
                     <!--Nome utilizador-->
                     <h1 class="fs-3 fw-bolder" id="profileUsername"></h1>
-                    <button id="btnEditProfile" class="btn btn-danger" type="button" onclick="editProfilePage();">Alterar
-                        Avatar</button>
+                    <input type="file" id="editPhoto">
+                    <div id="editProfilePhoto" class="col-md-4 offset-md-4">
+                        <label for="editPhoto" id="uploadPhoto">Alterar foto</label>
+                    </div>
+                    <!-- <button id="btnEditProfile" class="btn btn-danger" type="button" onclick="editProfilePage();">Alterar
+                        Avatar</button> -->
                 </div>
             </div>
             <form id="frmEditProfile">

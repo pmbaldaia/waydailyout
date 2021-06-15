@@ -14,9 +14,28 @@ export default class ProfileView {
         this.passwordEditRegister = document.querySelector("#txtPasswordRegister")
         this.editUserMessage = document.getElementById('registerMessage');
 
+        this.editBtn = document.querySelector('#editPhoto')
+        this.uploadPhoto = document.querySelector("#uploadPhoto");
+        this.userPhoto = document.querySelector('#userPhoto');
+        this.getPhoto()
+
 
         this.renderEditForm()
         this.renderNewPersonalData()
+    }
+
+    getPhoto(){
+        photo = this.editBtn.files[0];
+        //FileReader lê o conteúdo(DataUrl) dos ficheiros guardados no computador do utilizador
+        const reader = new FileReader();
+
+        reader.addEventListener('load', function(){
+            this.userPhoto.setAtribute('src', reader.result)
+        });
+
+        if (photo) {
+            reader.readAsDataURL(photo); //é uma string
+        }
     }
 
     renderEditForm() {

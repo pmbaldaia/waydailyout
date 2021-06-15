@@ -8,3 +8,12 @@ export default class ActivityModel {
     }
 }
 
+export class TaskModel {
+    constructor(title, author, category, video, img) {
+        this.title = title,
+            this.author = author,
+            this.img = img,
+            this.category = category,
+            this.video = video
+    }
+}

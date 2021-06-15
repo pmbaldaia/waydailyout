@@ -101,6 +101,15 @@ class App {
                 username: 'Pedro',
                 password: 'mic',
                 type: 'admin'
+            },
+            {
+                id: 4,
+                username: 'user2',
+                password: 'user2',
+                email: 'user2@gmail.com',
+                genre: 'feminino',
+                local: 'Porto',
+                type: 'user'
             }
 
         ];
